@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de solicitud de compra y reserva de libros en Editorial Teresina.">
+    <title>Hacer Pedido | Editorial Teresina</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
+                <span class="brand-name">Editorial Teresina</span>
+            </a>
+            <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
+            <nav id="main-nav">
+                <a href="catalogo.html">Catálogo</a>
+                <a href="colecciones.html">Colecciones</a>
+                <a href="autores.html">Autores</a>
+                <a href="editorial.html">La editorial</a>
+                <a href="publica.html">Publica con nosotros</a>
+                <a href="distribucion.html">Distribución</a>
+                <a href="revista.html">Revista</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 3rem 1.5rem; max-width: 760px;">
+
+        <header style="margin-bottom: 2.5rem; text-align: center;">
+            <p class="eyebrow">Solicitud de compra / Reserva</p>
+            <h1 style="font-size: 2.25rem; margin-top: 0.5rem;">Formulario de Pedido</h1>
+            <p class="muted" style="margin-top: 0.75rem; line-height: 1.6;">
+                Rellena los datos de envío a continuación. Te enviaremos una confirmación y los detalles para la
+                recepción de tu ejemplar impreso bajo demanda.
+            </p>
+        </header>
+
+        <!-- FORMULARIO DE PEDIDO -->
+        <!-- NOTA: En la siguiente fase cambiaremos el 'action' por la URL del servicio de correo (p. ej. Formspree) -->
+        <form id="form-pedido" action="https://formsubmit.co/prueba@gmail.com" method="POST"
+            style="background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+
+            <input type="hidden" name="_subject" value="Nuevo pedido recibido - Editorial Teresina">
+            <input type="hidden" name="_autorespond"
+                value="¡Gracias por tu pedido en Editorial Teresina! Hemos recibido tus datos correctamente. En breve nos pondremos en contacto contigo para indicarte los detalles de pago y envío.">
+
+            <!-- SECCIÓN 1: DETALLES DEL LIBRO -->
+            <fieldset style="border: none; padding: 0; margin: 0 0 2rem 0;">
+                <legend
+                    style="font-size: 1.15rem; font-weight: 600; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 1px solid #f3f4f6; width: 100%;">
+                    1. Selección del libro
+                </legend>
+
+                <div style="margin-bottom: 1.25rem;">
+                    <label for="select-libro" style="display: block; font-weight: 500; margin-bottom: 0.5rem;">Libro
+                        solicitado *</label>
+                    <select id="select-libro" name="libro" required
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; background-color: #fff; font-size: 1rem;">
+                        <option value="">Cargando catálogo...</option>
+                    </select>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: end;">
+                    <div>
+                        <label for="cantidad" style="display: block; font-weight: 500; margin-bottom: 0.5rem;">Unidades
+                            *</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="20" value="1" required
+                            style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem;">
+                    </div>
+                    <div
+                        style="background-color: #f9fafb; padding: 0.75rem 1rem; border-radius: 6px; border: 1px solid #e5e7eb; text-align: right;">
+                        <span style="font-size: 0.85rem; color: #6b7280; display: block;">Total estimado:</span>
+                        <strong id="total-estimado" style="font-size: 1.25rem; color: #111827;">-- €</strong>
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- SECCIÓN 2: DATOS DEL COMPRADOR Y ENVÍO -->
+            <fieldset style="border: none; padding: 0; margin: 0 0 2rem 0;">
+                <legend
+                    style="font-size: 1.15rem; font-weight: 600; margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 1px solid #f3f4f6; width: 100%;">
+                    2. Datos del comprador y envío
+                </legend>
+
+                <div style="margin-bottom: 1.25rem;">
+                    <label for="nombre" style="display: block; font-weight: 500; margin-bottom: 0.5rem;">Nombre y
+                        apellidos *</label>
+                    <input type="text" id="nombre" name="nombre" required placeholder="Ej. María García López"
+                        autocomplete="name"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem;">
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-bottom: 1.25rem;">
+                    <div>
+                        <label for="email" style="display: block; font-weight: 500; margin-bottom: 0.5rem;">Correo
+                            electrónico *</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com"
+                            autocomplete="email"
+                            style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem;">
+                    </div>
+                    <div>
+                        <label for="telefono" style="display: block; font-weight: 500; margin-bottom: 0.5rem;">Teléfono
+                            de contacto *</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="600000000"
+                            inputmode="numeric" pattern="[0-9]{9}" maxlength="9" autocomplete="tel"
+                            title="Introduce un número de teléfono válido de 9 dígitos"
+                            style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 1.25rem;">
+                    <label for="direccion" style="display: block; font-weight: 500; margin-bottom: 0.5rem;">Dirección de
+                        entrega completa *</label>
+                    <input type="text" id="direccion" name="direccion" required
+                        placeholder="Calle, número, piso, puerta" autocomplete="street-address"
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem;">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+                    <div>
+                        <label for="cp" style="display: block; font-weight: 500; margin-bottom: 0.5rem;">Código Postal
+                            *</label>
+                        <input type="text" id="cp" name="cp" required placeholder="28001" maxlength="5" minlength="5"
+                            inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code"
+                            title="Debe contener exactamente 5 números"
+                            style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem;">
+                    </div>
+                    <div>
+                        <label for="poblacion"
+                            style="display: block; font-weight: 500; margin-bottom: 0.5rem;">Población / Provincia
+                            *</label>
+                        <input type="text" id="poblacion" name="poblacion" required placeholder="Madrid"
+                            autocomplete="address-level2"
+                            style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem;">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="notas" style="display: block; font-weight: 500; margin-bottom: 0.5rem;">Notas
+                        adicionales o instrucciones de entrega (Opcional)</label>
+                    <textarea id="notas" name="notas" rows="3"
+                        placeholder="Ej. Entregar en horario de mañana o dejar en conserjería."
+                        style="width: 100%; padding: 0.75rem; border: 1px solid #d1d5db; border-radius: 6px; font-size: 1rem; font-family: inherit;"></textarea>
+                </div>
+            </fieldset>
+
+            <!-- SECCIÓN 3: TÉRMINOS Y ENVÍO -->
+            <div style="margin-bottom: 1.5rem;">
+                <label
+                    style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem; color: #4b5563; cursor: pointer;">
+                    <input type="checkbox" required style="margin-top: 0.2rem;">
+                    <span>Acepto la política de privacidad y autorizo el procesamiento de mis datos para la gestión y
+                        envío de este pedido.</span>
+                </label>
+            </div>
+
+            <button type="submit" class="btn btn-dark" style="width: 100%; padding: 0.85rem; font-size: 1.05rem;">
+                Confirmar y enviar pedido
+            </button>
+        </form>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer style="margin-top: 4rem; padding: 2rem 0; border-top: 1px solid #e5e7eb; text-align: center;" class="muted">
+        <div class="container">
+            <p>&copy; 2026 Editorial Teresina. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PRINCIPAL Y LÓGICA DEL FORMULARIO -->
+    <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const selectLibro = document.getElementById('select-libro');
+            const inputCantidad = document.getElementById('cantidad');
+            const totalEstimado = document.getElementById('total-estimado');
+
+            if (!selectLibro) return;
+
+            // Obtener el slug pasado en la URL (ej: pedido.html?slug=el-quijote)
+            const urlParams = new URLSearchParams(window.location.search);
+            const slugUrl = urlParams.get('slug');
+
+            let librosDisponibles = [];
+
+            // 1. Cargar catálogo activo desde Sanity
+            const query = encodeURIComponent('*[_type in ["book", "libro"] && status != "agotado"]{ title, slug, price, status }');
+            const url = `https://1espt2y0.api.sanity.io/v2023-01-01/data/query/production?query=${query}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                librosDisponibles = data.result || [];
+
+                if (librosDisponibles.length === 0) {
+                    selectLibro.innerHTML = '<option value="">No hay libros disponibles actualmente</option>';
+                    return;
+                }
+
+                // Generar opciones para el desplegable
+                selectLibro.innerHTML = '<option value="">-- Selecciona un libro --</option>' +
+                    librosDisponibles.map(libro => {
+                        const slug = libro.slug?.current || '';
+                        const etiquetaEstado = libro.status === 'preventa' ? ' (Preventa)' : '';
+                        const precio = typeof libro.price === 'number' ? `${libro.price.toFixed(2)} €` : 'Consultar';
+                        return `<option value="${slug}" data-precio="${libro.price || 0}">
+                            ${libro.title}${etiquetaEstado} - ${precio}
+                        </option>`;
+                    }).join('');
+
+                // Preseleccionar libro si viene por URL
+                if (slugUrl) {
+                    selectLibro.value = slugUrl;
+                }
+
+                // Actualizar total inicial
+                calcularTotal();
+
+            } catch (error) {
+                console.error('Error al cargar libros en el formulario:', error);
+                selectLibro.innerHTML = '<option value="">Error al cargar los libros</option>';
+            }
+
+            // 2. Recalcular precio total
+            function calcularTotal() {
+                const opcionSeleccionada = selectLibro.options[selectLibro.selectedIndex];
+                const precio = parseFloat(opcionSeleccionada?.dataset?.precio || 0);
+                const cantidad = parseInt(inputCantidad.value) || 1;
+
+                if (precio > 0) {
+                    const total = (precio * cantidad).toFixed(2).replace('.', ',');
+                    totalEstimado.textContent = `${total} €`;
+                } else {
+                    totalEstimado.textContent = '-- €';
+                }
+            }
+
+            selectLibro.addEventListener('change', calcularTotal);
+            inputCantidad.addEventListener('input', calcularTotal);
+
+            const formPedido = document.getElementById('form-pedido');
+
+            formPedido.addEventListener('submit', async (e) => {
+                e.preventDefault(); // Evita la redirección predeterminada
+
+                const submitBtn = formPedido.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+
+                // Cambiar estado del botón mientras se envía
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando pedido...';
+
+                const formData = new FormData(formPedido);
+
+                try {
+                    const response = await fetch(formPedido.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    });
+
+                    if (response.ok) {
+                        // Reemplazar el formulario por un mensaje de éxito profesional
+                        formPedido.innerHTML = `
+                <div style="text-align: center; padding: 2rem 1rem;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+                    <h2 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;">¡Pedido recibido con éxito!</h2>
+                    <p style="color: #4b5563; line-height: 1.6; margin-bottom: 1.5rem;">
+                        Hemos registrado tu solicitud. En breve te enviaremos un correo electrónico con la confirmación y las instrucciones de pago.
+                    </p>
+                    <a href="catalogo.html" class="btn btn-dark" style="display: inline-block; text-decoration: none;">Volver al catálogo</a>
+                </div>
+            `;
+                    } else {
+                        throw new Error('Error en el servidor');
+                    }
+                } catch (error) {
+                    alert('Hubo un problema al enviar tu pedido. Por favor, inténtalo de nuevo o contáctanos directamente.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

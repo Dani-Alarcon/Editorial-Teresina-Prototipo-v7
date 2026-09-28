@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>La editorial | Editorial Teresina</title>
+
+    <!-- MEJORA SEO: Meta descripción esencial para que Google sepa de qué trata esta página y lo muestre en resultados -->
+    <meta name="description"
+        content="Conoce Editorial Teresina, una editorial independiente dedicada a la cultura, el pensamiento y la recuperación de grandes obras literarias.">
+
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <!-- MEJORA RENDIMIENTO: Añadidos width y height para evitar el salto de pantalla (CLS) al cargar -->
+                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
+                <span class="brand-name">Editorial Teresina</span>
+            </a>
+
+            <!-- MEJORA ACCESIBILIDAD: Atributos ARIA para el menú móvil -->
+            <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
+
+            <nav id="main-nav">
+                <a href="catalogo.html">Catálogo</a>
+                <a href="colecciones.html">Colecciones</a>
+                <a href="autores.html">Autores</a>
+                <!-- MEJORA ACCESIBILIDAD: aria-current indica a los lectores de pantalla en qué página estamos -->
+                <a href="editorial.html" aria-current="page">La editorial</a>
+                <a href="publica.html">Publica con nosotros</a>
+                <a href="distribucion.html">Distribución</a>
+                <a href="revista.html">Revista</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-head">
+            <div class="container">
+                <p class="eyebrow">La editorial</p>
+                <h1>Publicar libros que merezcan ser leídos.</h1>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container two-col">
+                <!-- MEJORA VISUAL: He añadido saltos de línea (<br>) para que este título quede como un poema de 3 líneas, mucho más elegante -->
+                <h2>Leer el pasado.<br>Pensar el presente.<br>Escribir el futuro.</h2>
+
+                <div>
+                    <!-- MEJORA TIPOGRÁFICA: He aplicado tu clase ".lead" al primer párrafo para darle más importancia visual, usando el CSS que ya tienes -->
+                    <p class="lead">Editorial Teresina es una editorial generalista e independiente con especial
+                        vocación por la cultura, el pensamiento y la transmisión del conocimiento.</p>
+                    <p>Queremos recuperar grandes obras de nuestra tradición cultural y abrir las puertas a quienes
+                        están escribiendo las obras del mañana.</p>
+                    <p>Procuraremos mantener precios razonables siempre que las características de cada edición lo
+                        permitan.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="contact-strip">
+        <div class="container">
+            <span>Atención telefónica: 9:00–13:30 h</span>
+            <span>Tel. <a href="tel:+34626349818">626 34 98 18</a></span>
+            <span><a href="mailto:editorialteresina@gmail.com">editorialteresina@gmail.com</a></span>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="brand">
+                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
+                <span class="brand-name">Editorial Teresina</span>
+            </div>
+            <small>Los clásicos tienen futuro.</small>
+            <small>© 2026 Editorial Teresina ·
+                <a href="legal/aviso-legal.html">Aviso legal</a> ·
+                <a href="legal/privacidad.html">Privacidad</a> ·
+                <a href="legal/cookies.html">Cookies</a>
+            </small>
+        </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+</body>
+
+</html>

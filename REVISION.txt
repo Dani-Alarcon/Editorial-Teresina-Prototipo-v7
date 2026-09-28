@@ -1,0 +1,21 @@
+EDITORIAL TERESINA — MODELO CASI DEFINITIVO
+
+Este paquete está pensado para revisar visualmente la web antes de publicarla.
+
+Revisar especialmente:
+- portada/inicio y lema;
+- tamaño y posición del logo;
+- tipografías y espacios;
+- nombres y orden de colecciones;
+- catálogo;
+- textos institucionales;
+- Publica con nosotros;
+- distribución;
+- Revista Teresina;
+- contacto.
+
+Todavía no activar como web definitiva:
+- formulario de manuscritos;
+- correos corporativos;
+- datos legales;
+- tienda/pagos.

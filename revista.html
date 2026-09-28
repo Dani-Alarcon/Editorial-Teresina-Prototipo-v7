@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Revista Teresina | Editorial Teresina</title>
+
+    <!-- MEJORA SEO: Esencial para posicionar el blog/revista en Google -->
+    <meta name="description"
+        content="Revista Teresina. Artículos, reflexiones y conversaciones sobre literatura, clásicos, nuevas voces y el pensamiento contemporáneo.">
+
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <!-- MEJORA RENDIMIENTO -->
+                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
+                <span class="brand-name">Editorial Teresina</span>
+            </a>
+
+            <!-- MEJORA ACCESIBILIDAD -->
+            <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
+
+            <nav id="main-nav">
+                <a href="catalogo.html">Catálogo</a>
+                <a href="colecciones.html">Colecciones</a>
+                <a href="autores.html">Autores</a>
+                <a href="editorial.html">La editorial</a>
+                <a href="publica.html">Publica con nosotros</a>
+                <a href="distribucion.html">Distribución</a>
+                <!-- MEJORA ACCESIBILIDAD: Indicador de página activa -->
+                <a href="revista.html" aria-current="page">Revista</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-head">
+            <div class="container">
+                <p class="eyebrow">Revista Teresina</p>
+                <h1>Leer también significa conversar.</h1>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="cards">
+                    <!-- MEJORA SEMÁNTICA Y UX: He añadido etiquetas <a> dentro de los <h3>. 
+                         Un artículo sin enlace no se puede "leer", y meter el enlace dentro del h3 
+                         es la mejor práctica de accesibilidad sin romper la estructura de tu CSS. -->
+                    <article class="card">
+                        <p class="eyebrow">Clásicos</p>
+                        <h3><a href="#">¿Por qué seguimos leyendo a Séneca?</a></h3>
+                    </article>
+
+                    <article class="card">
+                        <p class="eyebrow">Nuevas Voces</p>
+                        <h3><a href="#">La primera obra</a></h3>
+                    </article>
+
+                    <article class="card">
+                        <p class="eyebrow">Pensamiento</p>
+                        <h3><a href="#">Leer contra la prisa</a></h3>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="contact-strip">
+        <div class="container">
+            <span>Atención telefónica: 9:00–13:30 h</span>
+            <span>Tel. <a href="tel:+34626349818">626 34 98 18</a></span>
+            <span><a href="mailto:editorialteresina@gmail.com">editorialteresina@gmail.com</a></span>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="brand">
+                <!-- MEJORA RENDIMIENTO -->
+                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
+                <span class="brand-name">Editorial Teresina</span>
+            </div>
+            <small>Los clásicos tienen futuro.</small>
+            <small>© 2026 Editorial Teresina ·
+                <a href="legal/aviso-legal.html">Aviso legal</a> ·
+                <a href="legal/privacidad.html">Privacidad</a> ·
+                <a href="legal/cookies.html">Cookies</a>
+            </small>
+        </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+</body>
+
+</html>

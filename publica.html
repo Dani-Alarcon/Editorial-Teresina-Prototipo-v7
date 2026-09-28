@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Publica con nosotros | Editorial Teresina</title>
+
+    <!-- MEJORA SEO: Meta descripción atractiva para animar a los autores a enviar su obra desde Google -->
+    <meta name="description"
+        content="¿Tienes una historia entre manos? En Editorial Teresina buscamos obras y talentos para nuestro catálogo. Envíanos tu manuscrito para una valoración.">
+
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="index.html">
+                <!-- MEJORA RENDIMIENTO: Dimensiones para evitar el CLS (salto de pantalla) -->
+                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
+                <span class="brand-name">Editorial Teresina</span>
+            </a>
+
+            <!-- MEJORA ACCESIBILIDAD: Preparación para JS -->
+            <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
+
+            <nav id="main-nav">
+                <a href="catalogo.html">Catálogo</a>
+                <a href="colecciones.html">Colecciones</a>
+                <a href="autores.html">Autores</a>
+                <a href="editorial.html">La editorial</a>
+                <!-- MEJORA ACCESIBILIDAD: Indicador de página activa -->
+                <a href="publica.html" aria-current="page">Publica con nosotros</a>
+                <a href="distribucion.html">Distribución</a>
+                <a href="revista.html">Revista</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-head">
+            <div class="container">
+                <p class="eyebrow">Publica con nosotros</p>
+                <h1>¿Tienes una historia entre manos? Queremos conocerla.</h1>
+                <p class="lead">No importa si es tu primera obra o si llevas años escribiendo. Si tienes algo que
+                    contar, pensar, cuestionar o compartir, envíanos tu manuscrito. En Editorial Teresina nos encantará
+                    descubrir qué hay detrás de esas páginas.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container two-col">
+                <div>
+                    <h2>Cuéntanos qué has escrito.</h2>
+                    <p>Solo necesitamos tus datos básicos, una breve explicación de la obra y el manuscrito.</p>
+                    <div class="note"><strong>Valoración individual.</strong> El tiempo de respuesta dependerá de cada
+                        obra, de su extensión y del tiempo necesario para realizar una lectura adecuada. La respuesta se
+                        enviará por correo electrónico.</div>
+                    <hr class="hr">
+                    <h3>Si queremos publicar tu obra</h3>
+                    <p>Analizaremos las necesidades concretas del proyecto y prepararemos un <strong>presupuesto
+                            individualizado</strong>. No existe una tarifa única: cada obra se estudia por separado.</p>
+                </div>
+
+                <form class="form" action="https://formspree.io/f/REEMPLAZAR_ID" method="post"
+                    enctype="multipart/form-data">
+
+                    <!-- MEJORA FORMULARIOS: Añadidos IDs, atributos 'for' y 'autocomplete' para autocompletado en móviles -->
+                    <label for="nombre">Nombre y apellidos *
+                        <input required type="text" id="nombre" name="nombre" autocomplete="name">
+                    </label>
+
+                    <label for="email">Correo electrónico *
+                        <input required type="email" id="email" name="email" autocomplete="email">
+                    </label>
+
+                    <label for="titulo">Título de la obra *
+                        <input required type="text" id="titulo" name="titulo">
+                    </label>
+
+                    <label for="genero">Tipo o género
+                        <!-- MEJORA: Valores definidos en los option para un envío de datos más limpio al backend -->
+                        <select id="genero" name="genero">
+                            <option value="">Opcional</option>
+                            <option value="Narrativa">Narrativa</option>
+                            <option value="Ensayo">Ensayo</option>
+                            <option value="Filosofía">Filosofía</option>
+                            <option value="Poesía">Poesía</option>
+                            <option value="Historia">Historia</option>
+                            <option value="Derecho">Derecho</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </label>
+
+                    <label for="resumen">Breve presentación o resumen *
+                        <textarea required rows="6" id="resumen" name="resumen"></textarea>
+                    </label>
+
+                    <label for="manuscrito">Adjuntar manuscrito *
+                        <input required type="file" id="manuscrito" name="manuscrito" accept=".pdf,.doc,.docx">
+                    </label>
+
+                    <label class="check" for="privacidad">
+                        <!-- MEJORA: Añadido name="privacidad" para que se envíe el check por Formspree -->
+                        <input required type="checkbox" id="privacidad" name="privacidad">
+                        <span>He leído y acepto la <a href="legal/privacidad.html"><u>política de privacidad</u></a> y
+                            autorizo el tratamiento de mis datos para gestionar la valoración editorial.</span>
+                    </label>
+
+                    <button class="btn btn-dark" type="submit">Enviar manuscrito</button>
+                    <p class="notice">Antes de publicar hay que conectar este formulario al correo/servicio elegido.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <section class="contact-strip">
+        <div class="container">
+            <span>Atención telefónica: 9:00–13:30 h</span>
+            <span>Tel. <a href="tel:+34626349818">626 34 98 18</a></span>
+            <span><a href="mailto:editorialteresina@gmail.com">editorialteresina@gmail.com</a></span>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="brand">
+                <!-- MEJORA RENDIMIENTO: Dimensiones y texto alternativo en el footer -->
+                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
+                <span class="brand-name">Editorial Teresina</span>
+            </div>
+            <small>Los clásicos tienen futuro.</small>
+            <small>© 2026 Editorial Teresina ·
+                <a href="legal/aviso-legal.html">Aviso legal</a> ·
+                <a href="legal/privacidad.html">Privacidad</a> ·
+                <a href="legal/cookies.html">Cookies</a>
+            </small>
+        </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+</body>
+
+</html>
