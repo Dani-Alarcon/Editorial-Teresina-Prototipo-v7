@@ -43,9 +43,9 @@
 
         <!-- FORMULARIO DE PEDIDO -->
         <!-- NOTA: En la siguiente fase cambiaremos el 'action' por la URL del servicio de correo (p. ej. Formspree) -->
-        <form id="form-pedido" action="https://formsubmit.co/editorialteresina@gmail.com" method="POST"
+        <form id="form-pedido" action="https://api.web3forms.com/submit" method="POST"
             style="background-color: #ffffff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 2rem; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-
+            <input type="hidden" name="access_key" value="fc5d5fe6-a902-4228-8acc-8967f98e3c1e">
             <input type="hidden" name="_subject" value="Nuevo pedido recibido - Editorial Teresina">
             <input type="hidden" name="_autorespond"
                 value="¡Gracias por tu pedido en Editorial Teresina! Hemos recibido tus datos correctamente. En breve nos pondremos en contacto contigo para indicarte los detalles de pago y envío.">
