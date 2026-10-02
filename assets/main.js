@@ -4,15 +4,16 @@
 const SANITY_PROJECT_ID = '1espt2y0';
 const SANITY_DATASET = 'production';
 
-// Mapa para traducir el valor interno de la colección a un nombre legible
+// Mapa para traducir el valor interno de Sanity a un nombre visible bonito
 const NOMBRES_COLECCIONES = {
-    clasicos: 'Clásicos',
-    pensamiento: 'Pensamiento',
-    ensayo: 'Ensayo',
-    poesia: 'Poesía',
-    historia: 'Historia',
-    derecho: 'Derecho',
-    otro: 'Catálogo'
+    'clasicos-griegos': 'Clásicos Griegos',
+    'clasicos-latinos': 'Clásicos Latinos',
+    'pensamiento': 'Pensamiento',
+    'nuevas-voces': 'Nuevas Voces',
+    'literatura': 'Literatura',
+    'poesia': 'Poesía',
+    'universal': 'Universal',
+    'otro': 'Otro'
 };
 
 // ==========================================
@@ -98,13 +99,89 @@ async function cargarLibros() {
             return;
         }
 
-        renderizarLibros(coleccionLibros);
+        // 1. Inyectar las colecciones disponibles en el <select>
+        poblarSelectColecciones(coleccionLibros);
+
+        // 2. Leer la URL por si viene con ?coleccion=... desde colecciones.html
+        aplicarFiltroDesdeURL();
+
+        // 3. Configurar eventos de búsqueda y realizar el renderizado inicial filtrado
         configurarFiltrosYBusqueda();
 
     } catch (error) {
         console.error('Error al cargar el catálogo de Sanity:', error);
         container.innerHTML = '<p class="muted" style="grid-column: 1 / -1; text-align: center;">No se pudo cargar el catálogo de libros en este momento.</p>';
     }
+}
+
+function poblarSelectColecciones(libros) {
+    const select = document.getElementById('filtro-coleccion');
+    if (!select) return;
+
+    // Extraer colecciones únicas presentes en los libros cargados
+    const coleccionesUnicas = [...new Set(libros.map(libro => libro.collection))].filter(Boolean);
+
+    // Reiniciar select con la opción por defecto
+    select.innerHTML = '<option value="todas">Todas las colecciones</option>';
+
+    coleccionesUnicas.forEach(coleccionSlug => {
+        const option = document.createElement('option');
+        option.value = coleccionSlug;
+        option.textContent = NOMBRES_COLECCIONES[coleccionSlug] || coleccionSlug;
+        select.appendChild(option);
+    });
+}
+
+function aplicarFiltroDesdeURL() {
+    const parametrosURL = new URLSearchParams(window.location.search);
+    const coleccionURL = parametrosURL.get('coleccion');
+    const select = document.getElementById('filtro-coleccion');
+
+    if (coleccionURL && select) {
+        for (let option of select.options) {
+            if (option.value.toLowerCase() === coleccionURL.toLowerCase()) {
+                select.value = option.value;
+                break;
+            }
+        }
+    }
+}
+
+function configurarFiltrosYBusqueda() {
+    const selectColeccion = document.getElementById('filtro-coleccion');
+    const inputBuscar = document.getElementById('buscar-libro');
+
+    function aplicarFiltros() {
+        const coleccionSeleccionada = selectColeccion ? selectColeccion.value : 'todas';
+        const textoBusqueda = inputBuscar ? inputBuscar.value.toLowerCase().trim() : '';
+
+        const librosFiltrados = coleccionLibros.filter(libro => {
+            const coincideColeccion = coleccionSeleccionada === 'todas' || libro.collection === coleccionSeleccionada;
+            const nombresAutores = libro.authors ? libro.authors.map(a => a.name.toLowerCase()).join(' ') : '';
+            const coincideTexto = textoBusqueda === '' ||
+                libro.title.toLowerCase().includes(textoBusqueda) ||
+                nombresAutores.includes(textoBusqueda);
+
+            return coincideColeccion && coincideTexto;
+        });
+
+        renderizarLibros(librosFiltrados);
+
+        // Actualizar URL sin recargar la página
+        const url = new URL(window.location);
+        if (coleccionSeleccionada === 'todas') {
+            url.searchParams.delete('coleccion');
+        } else {
+            url.searchParams.set('coleccion', coleccionSeleccionada);
+        }
+        window.history.replaceState({}, '', url);
+    }
+
+    if (selectColeccion) selectColeccion.addEventListener('change', aplicarFiltros);
+    if (inputBuscar) inputBuscar.addEventListener('input', aplicarFiltros);
+
+    // Ejecución inicial tras cargar los libros para aplicar el filtro de la URL
+    aplicarFiltros();
 }
 
 function renderizarLibros(libros) {
@@ -128,7 +205,6 @@ function renderizarLibros(libros) {
         const etiquetaColeccion = NOMBRES_COLECCIONES[libro.collection] || 'Catálogo';
         const libroSlug = libro.slug?.current || '';
 
-        // Definir botón de acción según disponibilidad
         let botonPedidoHTML = '';
         if (libro.status === 'agotado') {
             botonPedidoHTML = `<button disabled class="btn" style="font-size: 0.9rem; padding: 0.5rem 0.75rem; opacity: 0.6; cursor: not-allowed;">Agotado</button>`;
@@ -160,31 +236,6 @@ function renderizarLibros(libros) {
             </article>
         `;
     }).join('');
-}
-
-function configurarFiltrosYBusqueda() {
-    const selectColeccion = document.getElementById('filtro-coleccion');
-    const inputBuscar = document.getElementById('buscar-libro');
-
-    function aplicarFiltros() {
-        const coleccionSeleccionada = selectColeccion ? selectColeccion.value : 'todas';
-        const textoBusqueda = inputBuscar ? inputBuscar.value.toLowerCase().trim() : '';
-
-        const librosFiltrados = coleccionLibros.filter(libro => {
-            const coincideColeccion = coleccionSeleccionada === 'todas' || libro.collection === coleccionSeleccionada;
-            const nombresAutores = libro.authors ? libro.authors.map(a => a.name.toLowerCase()).join(' ') : '';
-            const coincideTexto = textoBusqueda === '' ||
-                libro.title.toLowerCase().includes(textoBusqueda) ||
-                nombresAutores.includes(textoBusqueda);
-
-            return coincideColeccion && coincideTexto;
-        });
-
-        renderizarLibros(librosFiltrados);
-    }
-
-    if (selectColeccion) selectColeccion.addEventListener('change', aplicarFiltros);
-    if (inputBuscar) inputBuscar.addEventListener('input', aplicarFiltros);
 }
 
 // ==========================================
@@ -256,7 +307,6 @@ async function cargarDetalleLibro() {
             ? libro.publicationDate.split('-')[0]
             : '-';
 
-        // Configuración de botones en la ficha detallada
         let botonesAccionHTML = '';
         if (libro.status === 'agotado') {
             botonesAccionHTML = `<button disabled class="btn" style="flex: 1; opacity: 0.6; cursor: not-allowed;">Agotado</button>`;
