@@ -350,7 +350,6 @@ h3 {
 .collection {
   position: relative;
   border: 1px solid rgba(23, 23, 23, .12);
-  padding: 28px;
   min-height: 190px;
   background: linear-gradient(145deg, rgba(255, 255, 255, .62), rgba(255, 255, 255, .24));
   box-shadow: 0 12px 26px rgba(0, 0, 0, .04);
@@ -363,7 +362,19 @@ h3 {
   border-color: var(--accent);
 }
 
-.collection::after {
+/* El enlace abarca toda la tarjeta y lleva el padding */
+.collection-link {
+  display: block;
+  position: relative;
+  padding: 28px;
+  height: 100%;
+  box-sizing: border-box;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* El texto "Ver colección →" ahora pertenece directamente al enlace <a> */
+.collection-link::after {
   content: "Ver colección →";
   position: absolute;
   left: 28px;
@@ -372,11 +383,6 @@ h3 {
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--accent);
-}
-
-.collection-link {
-  display: block;
-  height: 100%;
 }
 
 .collection h3 {
