@@ -210,6 +210,8 @@ function renderizarLibros(libros) {
             botonPedidoHTML = `<button disabled class="btn" style="font-size: 0.9rem; padding: 0.5rem 0.75rem; opacity: 0.6; cursor: not-allowed;">Agotado</button>`;
         } else if (libro.status === 'preventa') {
             botonPedidoHTML = `<a href="pedido.html?slug=${libroSlug}" class="btn btn-dark" style="font-size: 0.9rem; padding: 0.5rem 0.75rem;">Reservar</a>`;
+        } else if (libro.status === 'en-edicion') {
+            botonPedidoHTML = `<button disabled class="btn" style="font-size: 0.9rem; padding: 0.5rem 0.75rem; opacity: 0.6; cursor: not-allowed;">Próximamente</button>`;
         } else {
             botonPedidoHTML = `<a href="pedido.html?slug=${libroSlug}" class="btn btn-dark" style="font-size: 0.9rem; padding: 0.5rem 0.75rem;">Hacer pedido</a>`;
         }
@@ -300,7 +302,7 @@ async function cargarDetalleLibro() {
         const etiquetaColeccion = NOMBRES_COLECCIONES[libro.collection] || 'Catálogo';
 
         const estadoFormateado = libro.status
-            ? libro.status.charAt(0).toUpperCase() + libro.status.slice(1)
+            ? libro.status.replace('-', ' ').charAt(0).toUpperCase() + libro.status.replace('-', ' ').slice(1)
             : 'Disponible';
 
         const fechaPublicacion = libro.publicationDate
@@ -309,17 +311,19 @@ async function cargarDetalleLibro() {
 
         let botonesAccionHTML = '';
         if (libro.status === 'agotado') {
-            botonesAccionHTML = `<button disabled class="btn" style="flex: 1; opacity: 0.6; cursor: not-allowed;">Agotado</button>`;
+            botonesAccionHTML = `<button disabled class="btn" style="flex: 1; opacity: 2.6; cursor: not-allowed;">Agotado</button>`;
         } else if (libro.status === 'preventa') {
             botonesAccionHTML = `
-                <a href="pedido.html?slug=${slug}" class="btn btn-dark" style="flex: 1; text-align: center; padding: 0.75rem 1rem;">Reservar en preventa</a>
-                <a href="contacto.html" class="btn" style="padding: 0.75rem 1rem;">Dudas generales</a>
-            `;
+        <a href="pedido.html?slug=${slug}" class="btn btn-dark" style="flex: 1; text-align: center; padding: 0.75rem 1rem;">Reservar en preventa</a>
+        <a href="contacto.html" class="btn" style="padding: 0.75rem 1rem;">Dudas generales</a>
+    `;
+        } else if (libro.status === 'en-edicion') {
+            botonesAccionHTML = `<button disabled class="btn" style="flex: 1; opacity: 2.6; cursor: not-allowed;">Próximamente en edición</button>`;
         } else {
             botonesAccionHTML = `
-                <a href="pedido.html?slug=${slug}" class="btn btn-dark" style="flex: 1; text-align: center; padding: 0.75rem 1rem;">Hacer pedido</a>
-                <a href="contacto.html" class="btn" style="padding: 0.75rem 1rem;">Dudas generales</a>
-            `;
+        <a href="pedido.html?slug=${slug}" class="btn btn-dark" style="flex: 1; text-align: center; padding: 0.75rem 1rem;">Hacer pedido</a>
+        <a href="contacto.html" class="btn" style="padding: 0.75rem 1rem;">Dudas generales</a>
+    `;
         }
 
         const portadaHTML = libro.coverUrl
