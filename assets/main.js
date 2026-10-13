@@ -318,7 +318,7 @@ async function cargarDetalleLibro() {
         <a href="contacto.html" class="btn" style="padding: 0.75rem 1rem;">Dudas generales</a>
     `;
         } else if (libro.status === 'en-edicion') {
-            botonesAccionHTML = `<button disabled class="btn" style="flex: 1; opacity: 2.6; cursor: not-allowed;">Próximamente en edición</button>`;
+            botonesAccionHTML = `<button disabled class="btn" style="flex: 1; opacity: 2.6; cursor: not-allowed;">Próximamente disponible</button>`;
         } else {
             botonesAccionHTML = `
         <a href="pedido.html?slug=${slug}" class="btn btn-dark" style="flex: 1; text-align: center; padding: 0.75rem 1rem;">Hacer pedido</a>
