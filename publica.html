@@ -144,33 +144,26 @@
             const genero = document.getElementById('genero').value || 'No especificado';
             const resumen = document.getElementById('resumen').value.trim();
 
-            // Correo de destino de la editorial
+            // Datos del correo
             const destinatario = 'editorialteresina@gmail.com';
-
-            // Construir el asunto con el formato exacto pedido
             const asunto = `Manuscrito propuesto_${titulo}_${nombre}`;
 
-            // Construir el cuerpo del mensaje de forma limpia y ordenada
-            const cuerpo = `Hola, equipo de Editorial Teresina:
-    
-    Me pongo en contacto con vosotros para enviaros una propuesta de publicación. A continuación os detallo la información de la obra:
-    
-    - Título de la obra: ${titulo}
-    - Autor/a: ${nombre}
-    - Correo de contacto: ${email}
-    - Género: ${genero}
-    
-    Breve presentación o resumen de la obra:
-    ${resumen}
-    
-    ---
-    (Adjunto mi manuscrito en este correo).`;
+            const cuerpo = `Hola, equipo de Editorial Teresina:\n\n` +
+                `Me pongo en contacto con vosotros para enviaros una propuesta de publicación. A continuación os detallo la información de la obra:\n\n` +
+                `- Título de la obra: ${titulo}\n` +
+                `- Autor/a: ${nombre}\n` +
+                `- Correo de contacto: ${email}\n` +
+                `- Género: ${genero}\n\n` +
+                `Breve presentación o resumen de la obra:\n` +
+                `${resumen}\n\n` +
+                `---\n` +
+                `(Adjunto mi manuscrito en este correo).`;
 
-            // Codificar los textos para que la URL del mailto no falle con espacios o tildes
-            const mailtoLink = `mailto:${destinatario}?subject=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
+            // Generar el enlace directo a la interfaz web de Gmail
+            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(destinatario)}&su=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
 
-            // Abrir el cliente de correo del usuario
-            window.location.href = mailtoLink;
+            // Abrir Gmail directamente en una pestaña nueva del navegador
+            window.open(gmailUrl, '_blank');
         });
     </script>
 </body>
