@@ -1,113 +1,44 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Catálogo de Libros | Editorial Teresina</title>
-
-    <!-- MEJORA SEO: Meta descripción orientada al catálogo y venta de libros -->
-    <meta name="description"
-        content="Explora el catálogo completo de Editorial Teresina. Obras de ensayo, filosofía, clásicos y nuevas voces con envío a domicilio.">
-
-    <link rel="stylesheet" href="assets/styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Catálogo · Editorial Teresina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Libre+Franklin:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="assets/logo-teresina.jpg">
+<meta name="description" content="Editorial Teresina: clásicos griegos y latinos, pensamiento y nuevas voces en ediciones cuidadas. Compra y preventa de libros.">
 </head>
-
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="index.html">
-                <!-- MEJORA RENDIMIENTO: Dimensiones explícitas para evitar CLS -->
-                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
-                <span class="brand-name">Editorial Teresina</span>
-            </a>
-
-            <!-- MEJORA ACCESIBILIDAD -->
-            <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
-
-            <nav id="main-nav">
-                <!-- MEJORA ACCESIBILIDAD: Indicador de página activa -->
-                <a href="catalogo.html" aria-current="page">Catálogo</a>
-                <a href="colecciones.html">Colecciones</a>
-                <a href="autores.html">Autores</a>
-                <a href="editorial.html">La editorial</a>
-                <a href="publica.html">Publica con nosotros</a>
-                <a href="distribucion.html">Distribución</a>
-                <a href="revista.html">Revista</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="page-head">
-            <div class="container">
-                <p class="eyebrow">Catálogo editorial</p>
-                <h1>Nuestros Libros</h1>
-                <p class="lead">Ediciones cuidadas y obras pensadas para perdurar. Descubre nuestras colecciones de
-                    filosofía, ensayo y clásicos esenciales.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-
-                <!-- BARRA DE FILTROS Y BÚSQUEDA (Preparada para conectar con JS/Sanity) -->
-                <div class="catalog-toolbar"
-                    style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; justify-content: space-between; align-items: center;">
-
-                    <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
-                        <label for="filtro-coleccion" class="sr-only"
-                            style="position:absolute; width:1px; height:1px; overflow:hidden;">Filtrar por
-                            colección</label>
-                        <select id="filtro-coleccion" name="coleccion" aria-label="Filtrar por colección">
-                            <option value="todas">Todas las colecciones</option>
-                            <!-- Las opciones dinámicas se insertarán aquí desde Sanity -->
-                        </select>
-                    </div>
-
-                    <div>
-                        <label for="buscar-libro" class="sr-only"
-                            style="position:absolute; width:1px; height:1px; overflow:hidden;">Buscar libro o
-                            autor</label>
-                        <input type="search" id="buscar-libro" placeholder="Buscar por título o autor..."
-                            aria-label="Buscar por título o autor">
-                    </div>
-                </div>
-
-                <!-- CUADRÍCULA DE LIBROS (Tarjetas de prueba/dummy) -->
-                <div class="cards" id="contenedor-libros">
-                    <p class="muted" style="grid-column: 1 / -1; text-align: center;">Cargando catálogo...</p>
-                </div>
-
-            </div>
-        </section>
-    </main>
-
-    <section class="contact-strip">
-        <div class="container">
-            <span>Atención telefónica: 9:00–13:30 h</span>
-            <span>Tel. <a href="tel:+34690296739">690 29 67 39</a></span>
-            <span><a href="mailto:editorialteresina@gmail.com">editorialteresina@gmail.com</a></span>
-        </div>
-    </section>
-
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="brand">
-                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
-                <span class="brand-name">Editorial Teresina</span>
-            </div>
-            <small>Los clásicos tienen futuro.</small>
-            <small>© 2026 Editorial Teresina ·
-                <a href="legal/aviso-legal.html">Aviso legal</a> ·
-                <a href="legal/privacidad.html">Privacidad</a> ·
-                <a href="legal/cookies.html">Cookies</a>
-            </small>
-        </div>
-    </footer>
-
-    <script src="assets/main.js"></script>
+<div class="promo" data-promo hidden></div>
+<header class="site"><div class="wrap hdr">
+<a class="brand" href="index.html"><img src="assets/logo-teresina.jpg" alt="Editorial Teresina"><span><b>Editorial Teresina</b><i>Los clásicos tienen futuro</i></span></a>
+<nav class="main" aria-label="Principal"><a href="catalogo.html" aria-current=page>Catálogo</a><a href="colecciones.html">Colecciones</a><a href="autores.html">Autores</a><a href="editorial.html">La editorial</a><a href="publica.html">Publica con nosotros</a><a href="distribucion.html">Distribución</a><a href="revista.html">Revista</a><a href="contacto.html">Contacto</a><a class="cartlink" href="cesta.html" aria-label="Cesta"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>Cesta <span class="count" data-cart-count>0</span></a></nav>
+</div></header>
+<main>
+<section class="pagehead"><div class="wrap"><div><div class="crumbs"><a href="index.html">Inicio</a> / Catálogo</div><p class="eyebrow">Catálogo editorial</p><h1>Nuestros libros</h1>
+<p class="lead" style="margin-top:16px">Ediciones cuidadas y obras pensadas para perdurar.</p></div><div class="pic"><svg aria-hidden="true" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg" style="display:block;"><path d="M40 64 L150 20 L260 64 Z" fill="none" stroke="#171717" stroke-width="1.4"></path><path d="M57.6 59 L150 28 L242.4 59 Z" fill="none" stroke="#171717" stroke-width="0.8"></path><rect x="40" y="64" width="220" height="28.6" fill="none" stroke="#171717" stroke-width="1.4"></rect><line x1="40" y1="76.9" x2="260" y2="76.9" stroke="#171717" stroke-width="0.9"></line><rect x="45.5" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="62.4" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="79.3" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="96.2" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="113.2" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="130.1" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="147" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="163.9" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="180.8" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="197.8" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="214.7" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="231.6" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="248.5" y="78.3" width="6" height="12.9" fill="none" stroke="#171717" stroke-width="0.8"></rect><rect x="46.4" y="92.6" width="23.8" height="6" fill="none" stroke="#171717" stroke-width="1.4"></rect><path d="M48.2 98.6 Q58.3 106.6 68.4 98.6" fill="none" stroke="#171717" stroke-width="1.4"></path><path d="M49.2 102.6 L48.1 213.6 L68.6 213.6 L67.5 102.6" fill="none" stroke="#171717" stroke-width="1.4"></path><line x1="52.8" y1="105.6" x2="52.3" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="56.5" y1="105.6" x2="56.3" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="60.2" y1="105.6" x2="60.3" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="63.8" y1="105.6" x2="64.4" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="64.6" y1="104.6" x2="64.6" y2="211.6" stroke="#171717" stroke-width="0.5"></line><line x1="66.8" y1="104.6" x2="66.8" y2="211.6" stroke="#171717" stroke-width="0.5"></line><rect x="83.1" y="92.6" width="23.8" height="6" fill="none" stroke="#171717" stroke-width="1.4"></rect><path d="M84.9 98.6 Q95 106.6 105.1 98.6" fill="none" stroke="#171717" stroke-width="1.4"></path><path d="M85.8 102.6 L84.7 213.6 L105.3 213.6 L104.2 102.6" fill="none" stroke="#171717" stroke-width="1.4"></path><line x1="89.5" y1="105.6" x2="89" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="93.2" y1="105.6" x2="93" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="96.8" y1="105.6" x2="97" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="100.5" y1="105.6" x2="101" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="101.2" y1="104.6" x2="101.2" y2="211.6" stroke="#171717" stroke-width="0.5"></line><line x1="103.4" y1="104.6" x2="103.4" y2="211.6" stroke="#171717" stroke-width="0.5"></line><rect x="119.8" y="92.6" width="23.8" height="6" fill="none" stroke="#171717" stroke-width="1.4"></rect><path d="M121.6 98.6 Q131.7 106.6 141.8 98.6" fill="none" stroke="#171717" stroke-width="1.4"></path><path d="M122.5 102.6 L121.4 213.6 L141.9 213.6 L140.8 102.6" fill="none" stroke="#171717" stroke-width="1.4"></path><line x1="126.2" y1="105.6" x2="125.6" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="129.8" y1="105.6" x2="129.7" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="133.5" y1="105.6" x2="133.7" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="137.2" y1="105.6" x2="137.7" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="137.9" y1="104.6" x2="137.9" y2="211.6" stroke="#171717" stroke-width="0.5"></line><line x1="140.1" y1="104.6" x2="140.1" y2="211.6" stroke="#171717" stroke-width="0.5"></line><rect x="156.4" y="92.6" width="23.8" height="6" fill="none" stroke="#171717" stroke-width="1.4"></rect><path d="M158.2 98.6 Q168.3 106.6 178.4 98.6" fill="none" stroke="#171717" stroke-width="1.4"></path><path d="M159.2 102.6 L158.1 213.6 L178.6 213.6 L177.5 102.6" fill="none" stroke="#171717" stroke-width="1.4"></path><line x1="162.8" y1="105.6" x2="162.3" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="166.5" y1="105.6" x2="166.3" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="170.2" y1="105.6" x2="170.4" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="173.8" y1="105.6" x2="174.4" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="174.6" y1="104.6" x2="174.6" y2="211.6" stroke="#171717" stroke-width="0.5"></line><line x1="176.8" y1="104.6" x2="176.8" y2="211.6" stroke="#171717" stroke-width="0.5"></line><rect x="193.1" y="92.6" width="23.8" height="6" fill="none" stroke="#171717" stroke-width="1.4"></rect><path d="M194.9 98.6 Q205 106.6 215.1 98.6" fill="none" stroke="#171717" stroke-width="1.4"></path><path d="M195.8 102.6 L194.7 213.6 L215.3 213.6 L214.2 102.6" fill="none" stroke="#171717" stroke-width="1.4"></path><line x1="199.5" y1="105.6" x2="198.9" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="203.2" y1="105.6" x2="203" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="206.8" y1="105.6" x2="207" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="210.5" y1="105.6" x2="211.1" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="211.2" y1="104.6" x2="211.2" y2="211.6" stroke="#171717" stroke-width="0.5"></line><line x1="213.4" y1="104.6" x2="213.4" y2="211.6" stroke="#171717" stroke-width="0.5"></line><rect x="229.8" y="92.6" width="23.8" height="6" fill="none" stroke="#171717" stroke-width="1.4"></rect><path d="M231.6 98.6 Q241.7 106.6 251.8 98.6" fill="none" stroke="#171717" stroke-width="1.4"></path><path d="M232.5 102.6 L231.4 213.6 L251.9 213.6 L250.8 102.6" fill="none" stroke="#171717" stroke-width="1.4"></path><line x1="236.2" y1="105.6" x2="235.6" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="239.8" y1="105.6" x2="239.7" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="243.5" y1="105.6" x2="243.7" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="247.2" y1="105.6" x2="247.7" y2="211.6" stroke="#171717" stroke-width="0.7"></line><line x1="247.9" y1="104.6" x2="247.9" y2="211.6" stroke="#171717" stroke-width="0.5"></line><line x1="250.1" y1="104.6" x2="250.1" y2="211.6" stroke="#171717" stroke-width="0.5"></line><rect x="32" y="213.6" width="236" height="8.8" fill="none" stroke="#171717" stroke-width="1.4"></rect><rect x="24" y="222.4" width="252" height="8.8" fill="none" stroke="#171717" stroke-width="1.4"></rect><rect x="16" y="231.2" width="268" height="8.8" fill="none" stroke="#171717" stroke-width="1.4"></rect></svg></div></div></section>
+<section class="band"><div class="wrap">
+<div class="filters" role="group" aria-label="Filtrar por colección"><button type="button" aria-pressed="true" data-f="all">Todas</button><button type="button" aria-pressed="false" data-f="clasicos-griegos">Clásicos Griegos</button><button type="button" aria-pressed="false" data-f="clasicos-latinos">Clásicos Latinos</button><button type="button" aria-pressed="false" data-f="pensamiento">Pensamiento</button><button type="button" aria-pressed="false" data-f="nuevas-voces">Nuevas Voces</button><button type="button" aria-pressed="false" data-f="literatura">Literatura</button><button type="button" aria-pressed="false" data-f="poesia">Poesía</button><button type="button" aria-pressed="false" data-f="universal">Universal</button><label for="q" style="position:absolute;left:-9999px">Buscar libro o autor</label><input id="q" type="search" placeholder="Buscar libro o autor"></div>
+<div class="grid g4" id="books" data-books="all"><p class="muted">Cargando el catálogo…</p></div>
+<p id="empty" class="muted" hidden style="text-align:center;padding:40px 0">No hay libros que coincidan. Prueba con otra colección.</p>
+</div></section>
+</main>
+<footer class="site"><div class="wrap" style="padding-top:56px;padding-bottom:24px">
+<svg aria-hidden="true" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg" style="display:block;width:120px;height:68px;margin:0 auto 32px"><path d="M74.1 73.5 L63 69.4 L54 61.9 L48.1 51.6 L46 40 L48.1 28.4 L54 18.1 L63 10.6" fill="none" stroke="#b9893d" stroke-width="1.1"></path><ellipse cx="59.9" cy="65" rx="6" ry="2.3" transform="rotate(-125 59.9 65)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="57.8" cy="70.8" rx="6" ry="2.3" transform="rotate(-195 57.8 70.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="52.6" cy="56.6" rx="6" ry="2.3" transform="rotate(-105 52.6 56.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="48.6" cy="61.4" rx="6" ry="2.3" transform="rotate(-175 48.6 61.4)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="48.5" cy="46.2" rx="6" ry="2.3" transform="rotate(-85 48.5 46.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="43.2" cy="49.3" rx="6" ry="2.3" transform="rotate(-155 43.2 49.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="48.3" cy="35.1" rx="6" ry="2.3" transform="rotate(-65 48.3 35.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="42.2" cy="36.2" rx="6" ry="2.3" transform="rotate(-135 42.2 36.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="51.9" cy="24.6" rx="6" ry="2.3" transform="rotate(-45 51.9 24.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="45.8" cy="23.5" rx="6" ry="2.3" transform="rotate(-115 45.8 23.5)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="58.8" cy="15.9" rx="6" ry="2.3" transform="rotate(-25 58.8 15.9)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="53.5" cy="12.8" rx="6" ry="2.3" transform="rotate(-95 53.5 12.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="68.4" cy="10.1" rx="6" ry="2.3" transform="rotate(-5 68.4 10.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="64.4" cy="5.3" rx="6" ry="2.3" transform="rotate(-75 64.4 5.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><path d="M85.9 73.5 L97 69.4 L106 61.9 L111.9 51.6 L114 40 L111.9 28.4 L106 18.1 L97 10.6" fill="none" stroke="#b9893d" stroke-width="1.1"></path><ellipse cx="102.2" cy="70.8" rx="6" ry="2.3" transform="rotate(15 102.2 70.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="100.1" cy="65" rx="6" ry="2.3" transform="rotate(-55 100.1 65)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="111.4" cy="61.4" rx="6" ry="2.3" transform="rotate(-5 111.4 61.4)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="107.4" cy="56.6" rx="6" ry="2.3" transform="rotate(-75 107.4 56.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="116.8" cy="49.3" rx="6" ry="2.3" transform="rotate(-25 116.8 49.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="111.5" cy="46.2" rx="6" ry="2.3" transform="rotate(-95 111.5 46.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="117.8" cy="36.2" rx="6" ry="2.3" transform="rotate(-45 117.8 36.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="111.7" cy="35.1" rx="6" ry="2.3" transform="rotate(-115 111.7 35.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="114.2" cy="23.5" rx="6" ry="2.3" transform="rotate(-65 114.2 23.5)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="108.1" cy="24.6" rx="6" ry="2.3" transform="rotate(-135 108.1 24.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="106.5" cy="12.8" rx="6" ry="2.3" transform="rotate(-85 106.5 12.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="101.2" cy="15.9" rx="6" ry="2.3" transform="rotate(-155 101.2 15.9)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="95.6" cy="5.3" rx="6" ry="2.3" transform="rotate(-105 95.6 5.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="91.6" cy="10.1" rx="6" ry="2.3" transform="rotate(-175 91.6 10.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><text x="80" y="47" text-anchor="middle" font-family="EB Garamond, Georgia, serif" font-size="22" fill="#e8c98f">ET</text></svg>
+<div class="fgrid">
+<div><span class="serif" style="font-size:26px;color:#fffaf2">Editorial Teresina</span><span class="serif" style="font-style:italic;font-size:17px">Los clásicos tienen futuro.</span></div>
+<div><strong>Contacto</strong><a href="mailto:editorialteresina@gmail.com">editorialteresina@gmail.com</a><span>Teléfono 690 29 67 39</span><span>De 9:00 a 13:30 h</span></div>
+<div><strong>Editorial</strong><a href="catalogo.html">Catálogo</a><a href="colecciones.html">Colecciones</a><a href="publica.html">Publica con nosotros</a><a href="distribucion.html">Librerías y distribución</a></div>
+<div><strong>Información legal</strong><a href="aviso-legal.html">Aviso legal</a><a href="condiciones.html">Condiciones de venta y preventa</a><a href="desistimiento.html">Desistimiento y devoluciones</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="reclamaciones.html">Atención al cliente y reclamaciones</a></div>
+</div>
+<p style="margin:40px 0 0;padding-top:20px;border-top:1px solid #3b3a36;font-size:13px;text-align:center;color:#a89f92">© 2026 Editorial Teresina SCP · CIF J93967974</p>
+</div></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="assets/tienda.js"></script>
+<script>{let f='all';const bs=[...document.querySelectorAll('#books .book')],q=document.getElementById('q'),em=document.getElementById('empty'),btns=[...document.querySelectorAll('.filters button')];
+const run=()=>{const t=q.value.trim().toLowerCase();let n=0;for(const b of bs){const ok=(f==='all'||b.dataset.coll===f)&&(!t||b.dataset.q.includes(t));b.hidden=!ok;if(ok)n++}em.hidden=n>0};
+for(const b of btns)b.addEventListener('click',()=>{f=b.dataset.f;for(const x of btns)x.setAttribute('aria-pressed',x===b);run()});q.addEventListener('input',run)}</script>
 </body>
-
 </html>
