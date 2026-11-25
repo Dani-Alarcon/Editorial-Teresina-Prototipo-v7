@@ -1,174 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Publica con nosotros | Editorial Teresina</title>
-
-    <!-- MEJORA SEO: Meta descripción atractiva para animar a los autores a enviar su obra desde Google -->
-    <meta name="description"
-        content="¿Tienes una historia entre manos? En Editorial Teresina buscamos obras y talentos para nuestro catálogo. Envíanos tu manuscrito para una valoración.">
-
-    <link rel="stylesheet" href="assets/styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Publica con nosotros · Editorial Teresina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Libre+Franklin:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="assets/logo-teresina.jpg">
+<meta name="description" content="Editorial Teresina: clásicos griegos y latinos, pensamiento y nuevas voces en ediciones cuidadas. Compra y preventa de libros.">
 </head>
-
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="index.html">
-                <!-- MEJORA RENDIMIENTO: Dimensiones para evitar el CLS (salto de pantalla) -->
-                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
-                <span class="brand-name">Editorial Teresina</span>
-            </a>
 
-            <!-- MEJORA ACCESIBILIDAD: Preparación para JS -->
-            <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
-
-            <nav id="main-nav">
-                <a href="catalogo.html">Catálogo</a>
-                <a href="colecciones.html">Colecciones</a>
-                <a href="autores.html">Autores</a>
-                <a href="editorial.html">La editorial</a>
-                <!-- MEJORA ACCESIBILIDAD: Indicador de página activa -->
-                <a href="publica.html" aria-current="page">Publica con nosotros</a>
-                <a href="distribucion.html">Distribución</a>
-                <a href="revista.html">Revista</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <section class="page-head">
-            <div class="container">
-                <p class="eyebrow">Publica con nosotros</p>
-                <h1>¿Tienes una historia entre manos? Queremos conocerla.</h1>
-                <p class="lead">No importa si es tu primera obra o si llevas años escribiendo. Si tienes algo que
-                    contar, pensar, cuestionar o compartir, envíanos tu manuscrito. En Editorial Teresina nos encantará
-                    descubrir qué hay detrás de esas páginas.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container two-col">
-                <div>
-                    <h2>Cuéntanos qué has escrito.</h2>
-                    <p>Solo necesitamos tus datos básicos, una breve explicación de la obra y el manuscrito.</p>
-                    <div class="note"><strong>Valoración individual.</strong> El tiempo de respuesta dependerá de cada
-                        obra, de su extensión y del tiempo necesario para realizar una lectura adecuada. La respuesta se
-                        enviará por correo electrónico.</div>
-                    <hr class="hr">
-                    <h3>Si queremos publicar tu obra</h3>
-                    <p>Analizaremos las necesidades concretas del proyecto y prepararemos un <strong>presupuesto
-                            individualizado</strong>. No existe una tarifa única: cada obra se estudia por separado.</p>
-                </div>
-
-                <form id="form-mailto" class="form">
-                    <label for="nombre">Nombre y apellidos *
-                        <input required type="text" id="nombre" name="nombre" autocomplete="name" placeholder="Tu nombre completo">
-                    </label>
-                
-                    <label for="email">Tu correo electrónico de contacto *
-                        <input required type="email" id="email" name="email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
-                    </label>
-                
-                    <label for="titulo">Título de la obra *
-                        <input required type="text" id="titulo" name="titulo" placeholder="Título de tu libro">
-                    </label>
-                
-                    <label for="genero">Tipo o género
-                        <select id="genero" name="genero">
-                            <option value="">Selecciona un género (opcional)</option>
-                            <option value="Narrativa">Narrativa</option>
-                            <option value="Ensayo">Ensayo</option>
-                            <option value="Filosofía">Filosofía</option>
-                            <option value="Poesía">Poesía</option>
-                            <option value="Historia">Historia</option>
-                            <option value="Derecho">Derecho</option>
-                            <option value="Otro">Otro</option>
-                        </select>
-                    </label>
-                
-                    <label for="resumen">Breve presentación o resumen *
-                        <textarea required rows="6" id="resumen" name="resumen"
-                            placeholder="Cuéntanos de qué trata la obra..."></textarea>
-                    </label>
-                
-                    <label class="check" for="aviso-adjunto"
-                        style="margin-bottom: 1.5rem; display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; background-color: #f9fafb; padding: 1rem; border-radius: 6px; border: 1px solid #e5e7eb;">
-                        <input required type="checkbox" id="aviso-adjunto" name="avisoAdjunto"
-                            style="margin-top: 3px; width: 18px; height: 18px; cursor: pointer;">
-                        <span style="font-size: 0.9rem; color: #374151; line-height: 1.4;">
-                            <strong>¡Importante!</strong> Entiendo que al hacer clic se abrirá mi correo y <strong>debo adjuntar manualmente
-                                mi manuscrito (PDF o Word)</strong> antes de pulsar el botón final de enviar.
-                        </span>
-                    </label>
-                
-                    <button class="btn btn-dark" type="submit">Abrir correo para enviar manuscrito</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <section class="contact-strip">
-        <div class="container">
-            <span>Atención telefónica: 9:00–13:30 h</span>
-            <span>Tel. <a href="tel:+34690296739">690 29 67 39</a></span>
-            <span><a href="mailto:editorialteresina@gmail.com">editorialteresina@gmail.com</a></span>
-        </div>
-    </section>
-
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="brand">
-                <!-- MEJORA RENDIMIENTO: Dimensiones y texto alternativo en el footer -->
-                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
-                <span class="brand-name">Editorial Teresina</span>
-            </div>
-            <small>Los clásicos tienen futuro.</small>
-            <small>© 2026 Editorial Teresina ·
-                <a href="legal/aviso-legal.html">Aviso legal</a> ·
-                <a href="legal/privacidad.html">Privacidad</a> ·
-                <a href="legal/cookies.html">Cookies</a>
-            </small>
-        </div>
-    </footer>
-
-    <script src="assets/main.js"></script>
-    <script>
-        document.getElementById('form-mailto').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Recoger los valores del formulario
-            const nombre = document.getElementById('nombre').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const titulo = document.getElementById('titulo').value.trim();
-            const genero = document.getElementById('genero').value || 'No especificado';
-            const resumen = document.getElementById('resumen').value.trim();
-
-            // Datos del correo
-            const destinatario = 'editorialteresina@gmail.com';
-            const asunto = `Manuscrito propuesto_${titulo}_${nombre}`;
-
-            const cuerpo = `Hola, equipo de Editorial Teresina:\n\n` +
-                `Me pongo en contacto con vosotros para enviaros una propuesta de publicación. A continuación os detallo la información de la obra:\n\n` +
-                `- Título de la obra: ${titulo}\n` +
-                `- Autor/a: ${nombre}\n` +
-                `- Correo de contacto: ${email}\n` +
-                `- Género: ${genero}\n\n` +
-                `Breve presentación o resumen de la obra:\n` +
-                `${resumen}\n\n` +
-                `---\n` +
-                `(Adjunto mi manuscrito en este correo).`;
-
-            // Generar el enlace directo a la interfaz web de Gmail
-            const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(destinatario)}&su=${encodeURIComponent(asunto)}&body=${encodeURIComponent(cuerpo)}`;
-
-            // Abrir Gmail directamente en una pestaña nueva del navegador
-            window.open(gmailUrl, '_blank');
-        });
-    </script>
+<header class="site"><div class="wrap hdr">
+<a class="brand" href="index.html"><img src="assets/logo-teresina.jpg" alt="Editorial Teresina"><span><b>Editorial Teresina</b><i>Los clásicos tienen futuro</i></span></a>
+<nav class="main" aria-label="Principal"><a href="catalogo.html">Catálogo</a><a href="colecciones.html">Colecciones</a><a href="autores.html">Autores</a><a href="editorial.html">La editorial</a><a href="publica.html" aria-current=page>Publica con nosotros</a><a href="distribucion.html">Distribución</a><a href="revista.html">Revista</a><a href="contacto.html">Contacto</a><a class="cartlink" href="cesta.html" aria-label="Cesta"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>Cesta <span class="count" data-cart-count>0</span></a></nav>
+</div></header>
+<main>
+<section class="pagehead"><div class="wrap"><div><div class="crumbs"><a href="index.html">Inicio</a> / Publica con nosotros</div><p class="eyebrow">Publica con nosotros</p><h1>¿Tienes una historia entre manos? Queremos conocerla.</h1>
+<p class="lead" style="margin-top:16px">No importa si es tu primera obra o si llevas años escribiendo.</p></div><div class="pic"><svg aria-hidden="true" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" style="display:block;max-width:230px"><path d="M30 98 L22.8 140 L73.2 140 L66 98 Z" fill="none" stroke="#171717" stroke-width="1.4"></path><rect x="33.6" y="88.4" width="28.8" height="9.6" fill="none" stroke="#171717" stroke-width="1.4"></rect><line x1="30" y1="115.4" x2="66" y2="115.4" stroke="#171717" stroke-width="0.5"></line><line x1="30" y1="118.4" x2="66" y2="118.4" stroke="#171717" stroke-width="0.5"></line><line x1="30" y1="121.4" x2="66" y2="121.4" stroke="#171717" stroke-width="0.5"></line><line x1="30" y1="124.4" x2="66" y2="124.4" stroke="#171717" stroke-width="0.5"></line><line x1="30" y1="127.4" x2="66" y2="127.4" stroke="#171717" stroke-width="0.5"></line><line x1="30" y1="130.4" x2="66" y2="130.4" stroke="#171717" stroke-width="0.5"></line><line x1="30" y1="133.4" x2="66" y2="133.4" stroke="#171717" stroke-width="0.5"></line><path d="M48 104 C66 62 96 20 126 -10 C108 38 84 68 48 104 Z" fill="none" stroke="#171717" stroke-width="1.4"></path><line x1="59.1" y1="87.7" x2="44.7" y2="85.3" stroke="#171717" stroke-width="0.7"></line><line x1="70.3" y1="71.4" x2="55.9" y2="69" stroke="#171717" stroke-width="0.7"></line><line x1="81.4" y1="55.1" x2="67" y2="52.7" stroke="#171717" stroke-width="0.7"></line><line x1="92.6" y1="38.9" x2="78.2" y2="36.5" stroke="#171717" stroke-width="0.7"></line><line x1="103.7" y1="22.6" x2="89.3" y2="20.2" stroke="#171717" stroke-width="0.7"></line><line x1="114.9" y1="6.3" x2="100.5" y2="3.9" stroke="#171717" stroke-width="0.7"></line></svg></div></div></section>
+<section class="band"><div class="wrap grid g2" style="gap:56px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:28px"><p style="margin:0;font-size:18px;color:#3d3833">Si tienes algo que contar, pensar, cuestionar o compartir, envíanos tu manuscrito. En Editorial Teresina nos encantará descubrir qué hay detrás de esas páginas.</p><div style="display:flex;gap:16px;align-items:flex-start"><span class="serif" style="flex:none;width:56px;height:56px;border-radius:50%;border:1.5px solid #b9893d;display:flex;align-items:center;justify-content:center;font-size:24px;color:#8e2237">I</span><div><h3 style="font-size:24px;margin:6px 0 4px">Envíanos tu propuesta</h3><p style="margin:0;color:#4f4840">Solo necesitamos tus datos básicos, una breve explicación de la obra y el manuscrito.</p></div></div><div style="display:flex;gap:16px;align-items:flex-start"><span class="serif" style="flex:none;width:56px;height:56px;border-radius:50%;border:1.5px solid #b9893d;display:flex;align-items:center;justify-content:center;font-size:24px;color:#8e2237">II</span><div><h3 style="font-size:24px;margin:6px 0 4px">Valoración individual</h3><p style="margin:0;color:#4f4840">El tiempo de respuesta dependerá de cada obra, de su extensión y del tiempo necesario para una lectura adecuada. Te responderemos por correo.</p></div></div><div style="display:flex;gap:16px;align-items:flex-start"><span class="serif" style="flex:none;width:56px;height:56px;border-radius:50%;border:1.5px solid #b9893d;display:flex;align-items:center;justify-content:center;font-size:24px;color:#8e2237">III</span><div><h3 style="font-size:24px;margin:6px 0 4px">Si queremos publicarla</h3><p style="margin:0;color:#4f4840">Analizaremos las necesidades concretas del proyecto y prepararemos un presupuesto individualizado: cada obra se estudia por separado.</p></div></div></div>
+<form class="panel" id="pubform"><h2 style="font-size:32px;margin-bottom:20px">Cuéntanos qué has escrito</h2>
+<div class="f"><label for="n">Nombre y apellidos *</label><input id="n" required autocomplete="name"></div>
+<div class="f"><label for="e">Correo electrónico *</label><input id="e" type="email" required autocomplete="email"></div>
+<div class="f"><label for="ti">Título de la obra *</label><input id="ti" required></div>
+<div class="f"><label for="g">Tipo o género</label><select id="g"><option>Selecciona un género (opcional)</option><option>Narrativa</option><option>Ensayo</option><option>Filosofía</option><option>Poesía</option><option>Historia</option><option>Derecho</option><option>Otro</option></select></div>
+<div class="f"><label for="r">Breve presentación o resumen *</label><textarea id="r" required></textarea></div>
+<label class="check" style="background:#e9dfcd;padding:14px;border-radius:6px"><input type="checkbox" id="adj" required> <span><strong>Importante:</strong> al pulsar el botón se abrirá un correo ya redactado para la editorial. Antes de enviarlo, <strong>adjunta tu manuscrito</strong> en PDF o Word.</span></label>
+<label class="check" style="margin-top:12px"><input type="checkbox" required> He leído la <a href="privacidad.html">política de privacidad</a> y acepto el tratamiento de mis datos para valorar la propuesta.</label>
+<button class="btn primary" type="submit" style="margin-top:18px;width:100%">Preparar el correo con mi propuesta</button>
+<p class="muted" style="font-size:14px;margin:12px 0 0">Si no se abre tu correo, escríbenos a <a href="mailto:editorialteresina@gmail.com">editorialteresina@gmail.com</a> con el manuscrito adjunto.</p>
+</form>
+</div></section>
+</main>
+<footer class="site"><div class="wrap" style="padding-top:56px;padding-bottom:24px">
+<svg aria-hidden="true" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg" style="display:block;width:120px;height:68px;margin:0 auto 32px"><path d="M74.1 73.5 L63 69.4 L54 61.9 L48.1 51.6 L46 40 L48.1 28.4 L54 18.1 L63 10.6" fill="none" stroke="#b9893d" stroke-width="1.1"></path><ellipse cx="59.9" cy="65" rx="6" ry="2.3" transform="rotate(-125 59.9 65)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="57.8" cy="70.8" rx="6" ry="2.3" transform="rotate(-195 57.8 70.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="52.6" cy="56.6" rx="6" ry="2.3" transform="rotate(-105 52.6 56.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="48.6" cy="61.4" rx="6" ry="2.3" transform="rotate(-175 48.6 61.4)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="48.5" cy="46.2" rx="6" ry="2.3" transform="rotate(-85 48.5 46.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="43.2" cy="49.3" rx="6" ry="2.3" transform="rotate(-155 43.2 49.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="48.3" cy="35.1" rx="6" ry="2.3" transform="rotate(-65 48.3 35.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="42.2" cy="36.2" rx="6" ry="2.3" transform="rotate(-135 42.2 36.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="51.9" cy="24.6" rx="6" ry="2.3" transform="rotate(-45 51.9 24.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="45.8" cy="23.5" rx="6" ry="2.3" transform="rotate(-115 45.8 23.5)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="58.8" cy="15.9" rx="6" ry="2.3" transform="rotate(-25 58.8 15.9)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="53.5" cy="12.8" rx="6" ry="2.3" transform="rotate(-95 53.5 12.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="68.4" cy="10.1" rx="6" ry="2.3" transform="rotate(-5 68.4 10.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="64.4" cy="5.3" rx="6" ry="2.3" transform="rotate(-75 64.4 5.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><path d="M85.9 73.5 L97 69.4 L106 61.9 L111.9 51.6 L114 40 L111.9 28.4 L106 18.1 L97 10.6" fill="none" stroke="#b9893d" stroke-width="1.1"></path><ellipse cx="102.2" cy="70.8" rx="6" ry="2.3" transform="rotate(15 102.2 70.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="100.1" cy="65" rx="6" ry="2.3" transform="rotate(-55 100.1 65)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="111.4" cy="61.4" rx="6" ry="2.3" transform="rotate(-5 111.4 61.4)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="107.4" cy="56.6" rx="6" ry="2.3" transform="rotate(-75 107.4 56.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="116.8" cy="49.3" rx="6" ry="2.3" transform="rotate(-25 116.8 49.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="111.5" cy="46.2" rx="6" ry="2.3" transform="rotate(-95 111.5 46.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="117.8" cy="36.2" rx="6" ry="2.3" transform="rotate(-45 117.8 36.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="111.7" cy="35.1" rx="6" ry="2.3" transform="rotate(-115 111.7 35.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="114.2" cy="23.5" rx="6" ry="2.3" transform="rotate(-65 114.2 23.5)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="108.1" cy="24.6" rx="6" ry="2.3" transform="rotate(-135 108.1 24.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="106.5" cy="12.8" rx="6" ry="2.3" transform="rotate(-85 106.5 12.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="101.2" cy="15.9" rx="6" ry="2.3" transform="rotate(-155 101.2 15.9)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="95.6" cy="5.3" rx="6" ry="2.3" transform="rotate(-105 95.6 5.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="91.6" cy="10.1" rx="6" ry="2.3" transform="rotate(-175 91.6 10.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><text x="80" y="47" text-anchor="middle" font-family="EB Garamond, Georgia, serif" font-size="22" fill="#e8c98f">ET</text></svg>
+<div class="fgrid">
+<div><span class="serif" style="font-size:26px;color:#fffaf2">Editorial Teresina</span><span class="serif" style="font-style:italic;font-size:17px">Los clásicos tienen futuro.</span></div>
+<div><strong>Contacto</strong><a href="mailto:editorialteresina@gmail.com">editorialteresina@gmail.com</a><span>Teléfono 690 29 67 39</span><span>De 9:00 a 13:30 h</span></div>
+<div><strong>Editorial</strong><a href="catalogo.html">Catálogo</a><a href="colecciones.html">Colecciones</a><a href="publica.html">Publica con nosotros</a><a href="distribucion.html">Librerías y distribución</a></div>
+<div><strong>Información legal</strong><a href="aviso-legal.html">Aviso legal</a><a href="condiciones.html">Condiciones de venta y preventa</a><a href="desistimiento.html">Desistimiento y devoluciones</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="reclamaciones.html">Atención al cliente y reclamaciones</a></div>
+</div>
+<p style="margin:40px 0 0;padding-top:20px;border-top:1px solid #3b3a36;font-size:13px;text-align:center;color:#a89f92">© 2026 Editorial Teresina SCP · CIF J93967974</p>
+</div></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="assets/tienda.js"></script>
+<script>{const f=document.getElementById('pubform');f.addEventListener('submit',e=>{e.preventDefault();if(!f.reportValidity())return;const v=id=>document.getElementById(id).value.trim();const g=document.getElementById('g');const gen=g.selectedIndex>0?g.value:'No especificado';
+const asunto='Manuscrito propuesto_'+v('ti')+'_'+v('n');const cuerpo='Hola, equipo de Editorial Teresina:\n\nOs envío una propuesta de publicación:\n\n- Título de la obra: '+v('ti')+'\n- Autor/a: '+v('n')+'\n- Correo de contacto: '+v('e')+'\n- Género: '+gen+'\n\nPresentación o resumen:\n'+v('r')+'\n\n---\n(Adjunto mi manuscrito en este correo.)';
+window.open('https://mail.google.com/mail/?view=cm&fs=1&to=editorialteresina%40gmail.com&su='+encodeURIComponent(asunto)+'&body='+encodeURIComponent(cuerpo),'_blank')})}</script>
 </body>
-
 </html>

@@ -1,81 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Detalle del Libro | Editorial Teresina</title>
-
-    <!-- MEJORA SEO: Meta descripción dinámica que luego se ajustará con JS -->
-    <meta name="description"
-        content="Consulta la sinopsis, ficha técnica y opciones de compra del libro en Editorial Teresina.">
-
-    <link rel="stylesheet" href="assets/styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Libro · Editorial Teresina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Libre+Franklin:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="assets/logo-teresina.jpg">
+<meta name="description" content="Editorial Teresina: clásicos griegos y latinos, pensamiento y nuevas voces en ediciones cuidadas. Compra y preventa de libros.">
 </head>
-
 <body>
-    <header class="site-header">
-        <div class="container header-inner">
-            <a class="brand" href="index.html">
-                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
-                <span class="brand-name">Editorial Teresina</span>
-            </a>
 
-            <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">☰</button>
-
-            <nav id="main-nav">
-                <a href="catalogo.html" aria-current="page">Catálogo</a>
-                <a href="colecciones.html">Colecciones</a>
-                <a href="autores.html">Autores</a>
-                <a href="editorial.html">La editorial</a>
-                <a href="publica.html">Publica con nosotros</a>
-                <a href="distribucion.html">Distribución</a>
-                <a href="revista.html">Revista</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </div>
-    </header>
-
-    <main>
-        <div class="container" style="padding-top: 1.5rem;">
-            <nav aria-label="Migas de pan">
-                <a href="catalogo.html" style="text-decoration: none; color: inherit; font-size: 0.95rem;">← Volver al
-                    catálogo</a>
-            </nav>
-        </div>
-    
-        <!-- JavaScript inyectará todo aquí al cargar -->
-        <article class="section" id="detalle-libro">
-            <div class="container" style="padding: 3rem 0; text-align: center;">
-                <p class="muted">Cargando información del libro...</p>
-            </div>
-        </article>
-    </main>
-
-    <section class="contact-strip">
-        <div class="container">
-            <span>Atención telefónica: 9:00–13:30 h</span>
-            <span>Tel. <a href="tel:+34690296739">690 29 67 39</a></span>
-            <span><a href="mailto:editorialteresina@gmail.com">editorialteresina@gmail.com</a></span>
-        </div>
-    </section>
-
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div class="brand">
-                <img src="assets/logo-editorial-teresina.png" alt="Logo Editorial Teresina" width="42" height="42">
-                <span class="brand-name">Editorial Teresina</span>
-            </div>
-            <small>Los clásicos tienen futuro.</small>
-            <small>© 2026 Editorial Teresina ·
-                <a href="legal/aviso-legal.html">Aviso legal</a> ·
-                <a href="legal/privacidad.html">Privacidad</a> ·
-                <a href="legal/cookies.html">Cookies</a>
-            </small>
-        </div>
-    </footer>
-
-    <script src="assets/main.js"></script>
+<header class="site"><div class="wrap hdr">
+<a class="brand" href="index.html"><img src="assets/logo-teresina.jpg" alt="Editorial Teresina"><span><b>Editorial Teresina</b><i>Los clásicos tienen futuro</i></span></a>
+<nav class="main" aria-label="Principal"><a href="catalogo.html" aria-current=page>Catálogo</a><a href="colecciones.html">Colecciones</a><a href="autores.html">Autores</a><a href="editorial.html">La editorial</a><a href="publica.html">Publica con nosotros</a><a href="distribucion.html">Distribución</a><a href="revista.html">Revista</a><a href="contacto.html">Contacto</a><a class="cartlink" href="cesta.html" aria-label="Cesta"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1.2 11a2 2 0 0 1-2 1.8H8.2a2 2 0 0 1-2-1.8z"></path><path d="M9 8V6a3 3 0 0 1 6 0v2"></path></svg>Cesta <span class="count" data-cart-count>0</span></a></nav>
+</div></header>
+<main>
+<div class="wrap" style="padding-top:32px" id="libro"><p class="muted" style="padding:80px 0;text-align:center">Cargando el libro…</p></div>
+<section class="band white" id="rel-wrap" hidden><div class="wrap"><h2 style="font-size:34px;margin-bottom:24px">También te puede interesar</h2><div class="grid g4" id="rel"></div></div></section>
+</main>
+<footer class="site"><div class="wrap" style="padding-top:56px;padding-bottom:24px">
+<svg aria-hidden="true" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg" style="display:block;width:120px;height:68px;margin:0 auto 32px"><path d="M74.1 73.5 L63 69.4 L54 61.9 L48.1 51.6 L46 40 L48.1 28.4 L54 18.1 L63 10.6" fill="none" stroke="#b9893d" stroke-width="1.1"></path><ellipse cx="59.9" cy="65" rx="6" ry="2.3" transform="rotate(-125 59.9 65)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="57.8" cy="70.8" rx="6" ry="2.3" transform="rotate(-195 57.8 70.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="52.6" cy="56.6" rx="6" ry="2.3" transform="rotate(-105 52.6 56.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="48.6" cy="61.4" rx="6" ry="2.3" transform="rotate(-175 48.6 61.4)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="48.5" cy="46.2" rx="6" ry="2.3" transform="rotate(-85 48.5 46.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="43.2" cy="49.3" rx="6" ry="2.3" transform="rotate(-155 43.2 49.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="48.3" cy="35.1" rx="6" ry="2.3" transform="rotate(-65 48.3 35.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="42.2" cy="36.2" rx="6" ry="2.3" transform="rotate(-135 42.2 36.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="51.9" cy="24.6" rx="6" ry="2.3" transform="rotate(-45 51.9 24.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="45.8" cy="23.5" rx="6" ry="2.3" transform="rotate(-115 45.8 23.5)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="58.8" cy="15.9" rx="6" ry="2.3" transform="rotate(-25 58.8 15.9)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="53.5" cy="12.8" rx="6" ry="2.3" transform="rotate(-95 53.5 12.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="68.4" cy="10.1" rx="6" ry="2.3" transform="rotate(-5 68.4 10.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="64.4" cy="5.3" rx="6" ry="2.3" transform="rotate(-75 64.4 5.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><path d="M85.9 73.5 L97 69.4 L106 61.9 L111.9 51.6 L114 40 L111.9 28.4 L106 18.1 L97 10.6" fill="none" stroke="#b9893d" stroke-width="1.1"></path><ellipse cx="102.2" cy="70.8" rx="6" ry="2.3" transform="rotate(15 102.2 70.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="100.1" cy="65" rx="6" ry="2.3" transform="rotate(-55 100.1 65)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="111.4" cy="61.4" rx="6" ry="2.3" transform="rotate(-5 111.4 61.4)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="107.4" cy="56.6" rx="6" ry="2.3" transform="rotate(-75 107.4 56.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="116.8" cy="49.3" rx="6" ry="2.3" transform="rotate(-25 116.8 49.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="111.5" cy="46.2" rx="6" ry="2.3" transform="rotate(-95 111.5 46.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="117.8" cy="36.2" rx="6" ry="2.3" transform="rotate(-45 117.8 36.2)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="111.7" cy="35.1" rx="6" ry="2.3" transform="rotate(-115 111.7 35.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="114.2" cy="23.5" rx="6" ry="2.3" transform="rotate(-65 114.2 23.5)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="108.1" cy="24.6" rx="6" ry="2.3" transform="rotate(-135 108.1 24.6)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="106.5" cy="12.8" rx="6" ry="2.3" transform="rotate(-85 106.5 12.8)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="101.2" cy="15.9" rx="6" ry="2.3" transform="rotate(-155 101.2 15.9)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="95.6" cy="5.3" rx="6" ry="2.3" transform="rotate(-105 95.6 5.3)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><ellipse cx="91.6" cy="10.1" rx="6" ry="2.3" transform="rotate(-175 91.6 10.1)" fill="none" stroke="#b9893d" stroke-width="0.935"></ellipse><text x="80" y="47" text-anchor="middle" font-family="EB Garamond, Georgia, serif" font-size="22" fill="#e8c98f">ET</text></svg>
+<div class="fgrid">
+<div><span class="serif" style="font-size:26px;color:#fffaf2">Editorial Teresina</span><span class="serif" style="font-style:italic;font-size:17px">Los clásicos tienen futuro.</span></div>
+<div><strong>Contacto</strong><a href="mailto:editorialteresina@gmail.com">editorialteresina@gmail.com</a><span>Teléfono 690 29 67 39</span><span>De 9:00 a 13:30 h</span></div>
+<div><strong>Editorial</strong><a href="catalogo.html">Catálogo</a><a href="colecciones.html">Colecciones</a><a href="publica.html">Publica con nosotros</a><a href="distribucion.html">Librerías y distribución</a></div>
+<div><strong>Información legal</strong><a href="aviso-legal.html">Aviso legal</a><a href="condiciones.html">Condiciones de venta y preventa</a><a href="desistimiento.html">Desistimiento y devoluciones</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="reclamaciones.html">Atención al cliente y reclamaciones</a></div>
+</div>
+<p style="margin:40px 0 0;padding-top:20px;border-top:1px solid #3b3a36;font-size:13px;text-align:center;color:#a89f92">© 2026 Editorial Teresina SCP · CIF J93967974</p>
+</div></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="assets/tienda.js"></script>
+<script>{const T=Tienda,el=document.getElementById('libro'),slug=new URLSearchParams(location.search).get('slug');
+const LOCK='<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#52643a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>',TRUCK='<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#52643a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><rect x="2" y="7" width="13" height="10" rx="1"></rect><path d="M15 10h4l3 3v4h-7z"></path><circle cx="6" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg>',DOC='<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#52643a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6"></path></svg>';
+(async()=>{let b;try{b=slug&&await T.bySlug(slug)}catch(e){el.innerHTML='<p class="muted" style="padding:80px 0;text-align:center">No se ha podido cargar el libro. Inténtalo de nuevo en unos minutos.</p>';return}
+if(!b){el.innerHTML='<div style="padding:80px 0;text-align:center"><h1 style="font-size:40px">Libro no encontrado</h1><p class="muted">Puede que ya no esté en el catálogo.</p><a class="btn primary" href="catalogo.html">Ir al catálogo</a></div>';return}
+document.title=b.title+' · Editorial Teresina';const e=T.esc,c=T.COLL[b.collection],x=T.EXTRA[b.slug]||{},p=T.price(b),can=T.buyable(b);
+const dims=b.dimensions?String(b.dimensions).trim().replace('x',' × ')+' cm':'';
+const isbn=b.isbn&&!/^(x|isbn)$/i.test(String(b.isbn).trim())?b.isbn:'';
+const fecha=b.publicationDate?new Date(b.publicationDate+'T12:00:00').toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'}):'';
+const rows=[['Colección',c?c.n:''],['Formato',dims],['Encuadernación',b.binding&&b.binding.trim().replace('blanca','blanda')],['Páginas',b.pages||''],['ISBN',isbn],[b.status==='disponible'?'Publicación':'Salida prevista',fecha]].filter(r=>r[1]);
+let syn='';if(typeof b.synopsis==='string')syn=b.synopsis;else if(Array.isArray(b.synopsis))syn=b.synopsis.map(bl=>(bl.children||[]).map(ch=>ch.text||'').join('')).join('\n\n');
+const synHTML=syn?syn.split(/\n\n+/).map(t=>'<p style="margin:0 0 10px;font-size:17px;color:#3d3833">'+e(t)+'</p>').join(''):'';
+const note={preventa:'Se cobra al reservar y se envía cuando el libro sale de imprenta.',disponible:'Se envía en los próximos días laborables.'}[b.status]||'';
+let buy;
+if(can)buy='<div class="panel" style="padding:28px;display:flex;flex-direction:column;gap:18px"><div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap"><span class="price" style="font-size:40px">'+T.fmt(p)+'</span><span style="font-size:14px;color:#4f4840">IVA incluido · Envío calculado al pagar</span></div><div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap"><span id="ql" style="font-weight:500">Ejemplares</span><div class="stepper" role="group" aria-labelledby="ql"><button type="button" id="qm" aria-label="Quitar un ejemplar">−</button><span id="qn" aria-live="polite">1</span><button type="button" id="qp" aria-label="Añadir un ejemplar">+</button></div><span style="color:#4f4840">Total: <strong id="qt" style="color:#171717;white-space:nowrap">'+T.fmt(p)+'</strong></span></div><div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px"><button type="button" id="buy" class="btn primary" style="min-height:54px;font-size:17px">'+(b.status==='preventa'?'Reservar y pagar':'Comprar')+'</button><button type="button" id="add" class="btn ghost" style="min-height:54px">Añadir a la cesta</button></div><div style="display:flex;flex-direction:column;gap:8px"><div class="trust">'+LOCK+'<span>Pago seguro con Stripe: tarjeta, Apple Pay o Google Pay. No guardamos los datos de tu tarjeta.</span></div><div class="trust">'+TRUCK+'<span>'+note+'</span></div><div class="trust">'+DOC+'<span>Antes de pagar, lee las <a href="condiciones.html">condiciones de venta y preventa</a>.</span></div></div></div>';
+else buy='<div class="panel" style="padding:28px;display:flex;flex-direction:column;gap:12px"><span class="price" style="font-size:30px">'+(p?T.fmt(p):'Precio próximamente')+'</span><p style="margin:0;color:#4f4840">'+(b.status==='agotado'?'Este libro está agotado.':b.status==='en-edicion'?'Este libro está en edición. Muy pronto podrás reservarlo.':'Muy pronto podrás comprarlo aquí.')+'</p><a class="btn ghost" href="index.html#avisos" style="align-self:flex-start">Avísame cuando esté disponible</a></div>';
+el.innerHTML='<nav class="crumbs" aria-label="Ruta"><a href="index.html">Inicio</a> / <a href="catalogo.html">Catálogo</a>'+(c?' / <a href="coleccion-'+e(b.collection)+'.html">'+e(c.n)+'</a>':'')+' / '+e(b.title)+'</nav>'+
+'<div class="grid g2" style="gap:56px;align-items:start;margin:16px 0 72px"><div style="background:#e9dfcd;border-radius:6px;padding:56px 24px 28px;display:flex;flex-direction:column;align-items:center;gap:16px;position:relative;overflow:hidden"><svg aria-hidden="true" viewBox="0 0 400 360" style="position:absolute;left:50%;top:30px;transform:translateX(-50%);width:480px;max-width:none;height:auto"><path d="M40 84 L200 20 L360 84 Z" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><path d="M65.6 79 L200 28 L334.4 79 Z" fill="none" stroke="#cbbda9" stroke-width="0.8"></path><rect x="40" y="84" width="320" height="41.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></rect><line x1="40" y1="102.7" x2="360" y2="102.7" stroke="#cbbda9" stroke-width="0.9"></line><rect x="49.3" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="73.9" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="98.5" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="123.2" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="147.8" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="172.4" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="197" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="221.6" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="246.2" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="270.8" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="295.5" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="320.1" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="344.7" y="104.8" width="6" height="18.7" fill="none" stroke="#cbbda9" stroke-width="0.8"></rect><rect x="49.3" y="125.6" width="34.7" height="6" fill="none" stroke="#cbbda9" stroke-width="1.2"></rect><path d="M52 131.6 Q66.7 139.6 81.3 131.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><path d="M53.3 135.6 L51.7 301.6 L81.6 301.6 L80 135.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><line x1="58.7" y1="138.6" x2="57.9" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="64" y1="138.6" x2="63.7" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="69.3" y1="138.6" x2="69.6" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="74.7" y1="138.6" x2="75.5" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="74.7" y1="137.6" x2="74.7" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="76.9" y1="137.6" x2="76.9" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="79.1" y1="137.6" x2="79.1" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><rect x="102.7" y="125.6" width="34.7" height="6" fill="none" stroke="#cbbda9" stroke-width="1.2"></rect><path d="M105.3 131.6 Q120 139.6 134.7 131.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><path d="M106.7 135.6 L105.1 301.6 L134.9 301.6 L133.3 135.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><line x1="112" y1="138.6" x2="111.2" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="117.3" y1="138.6" x2="117.1" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="122.7" y1="138.6" x2="122.9" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="128" y1="138.6" x2="128.8" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="128.1" y1="137.6" x2="128.1" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="130.3" y1="137.6" x2="130.3" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="132.5" y1="137.6" x2="132.5" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><rect x="156" y="125.6" width="34.7" height="6" fill="none" stroke="#cbbda9" stroke-width="1.2"></rect><path d="M158.7 131.6 Q173.3 139.6 188 131.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><path d="M160 135.6 L158.4 301.6 L188.3 301.6 L186.7 135.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><line x1="165.3" y1="138.6" x2="164.5" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="170.7" y1="138.6" x2="170.4" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="176" y1="138.6" x2="176.3" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="181.3" y1="138.6" x2="182.1" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="181.4" y1="137.6" x2="181.4" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="183.6" y1="137.6" x2="183.6" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="185.8" y1="137.6" x2="185.8" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><rect x="209.3" y="125.6" width="34.7" height="6" fill="none" stroke="#cbbda9" stroke-width="1.2"></rect><path d="M212 131.6 Q226.7 139.6 241.3 131.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><path d="M213.3 135.6 L211.7 301.6 L241.6 301.6 L240 135.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><line x1="218.7" y1="138.6" x2="217.9" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="224" y1="138.6" x2="223.7" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="229.3" y1="138.6" x2="229.6" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="234.7" y1="138.6" x2="235.5" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="234.7" y1="137.6" x2="234.7" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="236.9" y1="137.6" x2="236.9" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="239.1" y1="137.6" x2="239.1" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><rect x="262.7" y="125.6" width="34.7" height="6" fill="none" stroke="#cbbda9" stroke-width="1.2"></rect><path d="M265.3 131.6 Q280 139.6 294.7 131.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><path d="M266.7 135.6 L265.1 301.6 L294.9 301.6 L293.3 135.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><line x1="272" y1="138.6" x2="271.2" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="277.3" y1="138.6" x2="277.1" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="282.7" y1="138.6" x2="282.9" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="288" y1="138.6" x2="288.8" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="288.1" y1="137.6" x2="288.1" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="290.3" y1="137.6" x2="290.3" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="292.5" y1="137.6" x2="292.5" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><rect x="316" y="125.6" width="34.7" height="6" fill="none" stroke="#cbbda9" stroke-width="1.2"></rect><path d="M318.7 131.6 Q333.3 139.6 348 131.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><path d="M320 135.6 L318.4 301.6 L348.3 301.6 L346.7 135.6" fill="none" stroke="#cbbda9" stroke-width="1.2"></path><line x1="325.3" y1="138.6" x2="324.5" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="330.7" y1="138.6" x2="330.4" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="336" y1="138.6" x2="336.3" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="341.3" y1="138.6" x2="342.1" y2="299.6" stroke="#cbbda9" stroke-width="0.7"></line><line x1="341.4" y1="137.6" x2="341.4" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="343.6" y1="137.6" x2="343.6" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><line x1="345.8" y1="137.6" x2="345.8" y2="299.6" stroke="#cbbda9" stroke-width="0.5"></line><rect x="32" y="301.6" width="336" height="12.8" fill="none" stroke="#cbbda9" stroke-width="1.2"></rect><rect x="24" y="314.4" width="352" height="12.8" fill="none" stroke="#cbbda9" stroke-width="1.2"></rect><rect x="16" y="327.2" width="368" height="12.8" fill="none" stroke="#cbbda9" stroke-width="1.2"></rect></svg><div style="position:relative">'+T.cover(b,280,420,true)+'</div>'+(T.realCover(b)?'':'<span class="muted" style="font-size:13px;position:relative">Cubierta en maquetación.</span>')+'</div>'+
+'<div style="display:flex;flex-direction:column;gap:18px"><div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">'+T.chip(b)+(c?'<a href="coleccion-'+e(b.collection)+'.html" class="muted" style="font-size:14px">'+e(c.n)+'</a>':'')+'</div><h1 style="font-size:clamp(42px,5vw,62px);line-height:1">'+e(b.title)+'</h1>'+(T.author(b)?'<p class="lead">'+e(T.author(b))+'</p>':'')+synHTML+(rows.length?'<dl class="specs">'+rows.map(r=>'<div><dt>'+e(r[0])+'</dt><dd>'+e(r[1])+'</dd></div>').join('')+'</dl>':'')+buy+'</div></div>'+
+(x.obra?'<section class="panel" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:40px;align-items:center;margin-bottom:32px"><div style="display:flex;justify-content:center"><svg aria-hidden="true" viewBox="0 0 260 200" style="width:100%;max-width:300px;height:auto">'+x.pic+'</svg></div><div style="display:flex;flex-direction:column;gap:12px"><p class="eyebrow" style="margin:0">Sobre la obra</p><h2 style="font-size:38px">'+e(x.obra[0])+'</h2><p style="margin:0;color:#3d3833">'+e(x.obra[1])+'</p></div></section>':'')+
+(x.autor?'<section style="display:flex;gap:28px;align-items:center;flex-wrap:wrap;padding:24px 0 64px"><svg role="img" aria-label="'+e(x.autor.n)+'" viewBox="0 0 120 120" style="width:110px;height:110px;flex:none">'+x.autor.m+'</svg><div style="flex:1 1 320px"><h2 style="font-size:30px">'+e(x.autor.n)+' <span style="font-size:18px;color:#6a6258;font-style:italic">('+e(x.autor.d)+')</span></h2><p style="margin:6px 0;color:#3d3833">'+e(x.autor.b)+'</p><a href="autores.html" style="font-weight:600;font-size:15px">Más sobre los autores →</a></div></section>':'');
+if(can){let q=1;const n=document.getElementById('qn'),t=document.getElementById('qt');const upd=()=>{n.textContent=q;t.textContent=T.fmt(p*q)};
+document.getElementById('qm').onclick=()=>{q=Math.max(1,q-1);upd()};document.getElementById('qp').onclick=()=>{q=Math.min(20,q+1);upd()};
+document.getElementById('add').onclick=()=>{T.add(b.slug,q);T.toast(q+(q>1?' ejemplares añadidos':' ejemplar añadido')+' a la cesta')};document.getElementById('buy').onclick=()=>{T.add(b.slug,q);location.href='cesta.html'}}
+const all=(await T.books()).filter(o=>o.slug!==b.slug).slice(0,4);if(all.length){document.getElementById('rel').innerHTML=all.map(T.card).join('');document.getElementById('rel-wrap').hidden=false}
+})()}</script>
 </body>
-
 </html>
