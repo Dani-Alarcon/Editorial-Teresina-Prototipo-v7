@@ -44,8 +44,8 @@
 </div></footer>
 <div id="toast" role="status" aria-live="polite"></div>
 <script src="assets/tienda.js"></script>
-<script>{for(const f of document.querySelectorAll('form.web3form')){f.addEventListener('submit',async e=>{e.preventDefault();if(!f.reportValidity())return;const b=f.querySelector('button[type=submit]'),ok=f.querySelector('.ok');const d=new FormData();d.append('access_key','fc5d5fe6-a902-4228-8acc-8967f98e3c1e');d.append('subject',f.dataset.subject||'Mensaje desde la web');d.append('from_name','Web Editorial Teresina');
+<script>{window.bindWeb3=f=>{if(f.dataset.bound)return;f.dataset.bound='1';f.addEventListener('submit',async e=>{e.preventDefault();if(!f.reportValidity())return;const b=f.querySelector('button[type=submit]'),ok=f.querySelector('.ok');const d=new FormData();d.append('access_key','fc5d5fe6-a902-4228-8acc-8967f98e3c1e');d.append('subject',f.dataset.subject||'Mensaje desde la web');d.append('from_name','Web Editorial Teresina');
 for(const el of f.querySelectorAll('input,select,textarea')){if(!el.id||el.type==='submit')continue;const l=f.querySelector('label[for="'+el.id+'"]');const k=(l?l.textContent:el.id).replace('*','').trim();d.append(k,el.type==='checkbox'?(el.checked?'Sí':'No'):el.value)}
-b.disabled=true;try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:d,headers:{Accept:'application/json'}});const j=await r.json();if(!j.success)throw 0;f.reset();ok.classList.add('show')}catch(x){ok.textContent='No se ha podido enviar. Escríbenos a editorialteresina@gmail.com.';ok.classList.add('show')}b.disabled=false})}}</script>
+b.disabled=true;try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:d,headers:{Accept:'application/json'}});const j=await r.json();if(!j.success)throw 0;f.reset();ok.classList.add('show')}catch(x){ok.textContent='No se ha podido enviar. Escríbenos a editorialteresina@gmail.com.';ok.classList.add('show')}b.disabled=false})};document.querySelectorAll('form.web3form').forEach(window.bindWeb3)}</script>
 </body>
 </html>
