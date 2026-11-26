@@ -2,7 +2,7 @@
 // Los precios se leen de Sanity en el servidor: nunca se confía en los que envía el navegador.
 // Variables de entorno en Vercel (Settings → Environment Variables):
 //   STRIPE_SECRET_KEY   clave secreta de Stripe (sk_live_… o sk_test_…). Obligatoria.
-//   SHIPPING_RATES      opcional. JSON con las tarifas de envío, importes en céntimos. Ejemplo:
+//   SHIPPING_RATES      opcional. JSON con las tarifas de envío, importes en céntimos (si falta: 4,90 € península). Ejemplo:
 //                       [{"name":"Envío estándar (península)","amount":390,"min_days":2,"max_days":5}]
 //   ALLOWED_COUNTRIES   opcional. Países de envío separados por comas (por defecto: ES).
 //   SITE_URL            opcional. Dirección pública de la web (por defecto: https://editorialteresina.es).
@@ -56,6 +56,8 @@ module.exports = async (req, res) => {
   p.append('metadata[pedido]', resumen.join(', ').slice(0, 490));
   let rates = [];
   try { rates = JSON.parse(process.env.SHIPPING_RATES || '[]'); } catch (e) { rates = []; }
+  // Tarifa por defecto mientras no se configure SHIPPING_RATES en Vercel.
+  if (!Array.isArray(rates) || !rates.length) rates = [{ name: 'Envío a España peninsular', amount: 490 }];
   rates.slice(0, 5).forEach((r, i) => {
     const b = `shipping_options[${i}][shipping_rate_data]`;
     p.append(`${b}[type]`, 'fixed_amount');
