@@ -101,3 +101,5 @@ dl.specs dt{color:var(--muted);font-size:13px}dl.specs dd{margin:0;font-weight:5
 @media(max-width:600px){.two{grid-template-columns:1fr}.line{grid-template-columns:minmax(0,1fr) auto}.line .mini{display:none}}
 @media(max-width:760px){.span2{grid-column:auto}.pagehead .wrap{grid-template-columns:1fr}.pagehead .pic svg{max-width:200px}.band{padding:48px 0}.filters input{margin-left:0;max-width:none}header.site{position:static}}
 @media(prefers-reduced-motion:reduce){.card{transition:none}html{scroll-behavior:auto}}
+
+.banco{margin-top:28px;border:1px solid #d8cfbf;border-left:3px solid #8e2237;background:#fffdf8;border-radius:4px;padding:16px 20px;font-size:15px;line-height:1.55}.banco p{margin:0 0 8px}.banco p:last-child{margin:0}.banco-t{font-weight:600;color:#8e2237}.banco-d span{display:inline-block;min-width:80px;color:#6b635a;font-size:13px;text-transform:uppercase;letter-spacing:.04em}.banco-d strong{letter-spacing:.03em;word-break:break-all}
