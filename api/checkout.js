@@ -12,7 +12,9 @@ const PID = '1espt2y0', DS = 'production';
 module.exports = async (req, res) => {
   res.setHeader('Cache-Control', 'no-store');
   if (req.method !== 'POST') { res.setHeader('Allow', 'POST'); return res.status(405).json({ error: 'metodo-no-permitido' }); }
-  const key = process.env.STRIPE_SECRET_KEY;
+  // Acepta el nombre de la variable sin distinguir mayúsculas (p. ej. «Stripe_SECRET_KEY»).
+  const kname = Object.keys(process.env).find(k => k.toUpperCase() === 'STRIPE_SECRET_KEY');
+  const key = kname ? String(process.env[kname]).trim() : '';
   if (!key) return res.status(503).json({ error: 'pago-no-configurado' });
   let body = req.body;
   if (typeof body === 'string') { try { body = JSON.parse(body || '{}'); } catch (e) { body = {}; } }
@@ -39,6 +41,8 @@ module.exports = async (req, res) => {
   p.append('cancel_url', `${site}/cesta.html`);
   p.append('phone_number_collection[enabled]', 'true');
   p.append('billing_address_collection', 'auto');
+  // Cálculo automático del IVA con Stripe Tax según el código fiscal de cada línea.
+  p.append('automatic_tax[enabled]', 'true');
   (process.env.ALLOWED_COUNTRIES || 'ES').split(',').map(s => s.trim().toUpperCase()).filter(Boolean)
     .forEach((c, i) => p.append(`shipping_address_collection[allowed_countries][${i}]`, c));
   let n = 0; const resumen = [];
@@ -51,6 +55,9 @@ module.exports = async (req, res) => {
     p.append(`line_items[${n}][price_data][currency]`, 'eur');
     p.append(`line_items[${n}][price_data][unit_amount]`, String(Math.round(price * 100)));
     p.append(`line_items[${n}][price_data][product_data][name]`, name);
+    // IVA de libros (4 %): precio con IVA incluido y código fiscal de Stripe «Books».
+    p.append(`line_items[${n}][price_data][tax_behavior]`, 'inclusive');
+    p.append(`line_items[${n}][price_data][product_data][tax_code]`, 'txcd_35010000');
     resumen.push(`${merged[s]}x ${s}`); n++;
   }
   p.append('metadata[pedido]', resumen.join(', ').slice(0, 490));
@@ -64,6 +71,8 @@ module.exports = async (req, res) => {
     p.append(`${b}[display_name]`, String(r.name || 'Envío'));
     p.append(`${b}[fixed_amount][amount]`, String(parseInt(r.amount, 10) || 0));
     p.append(`${b}[fixed_amount][currency]`, 'eur');
+    p.append(`${b}[tax_behavior]`, 'inclusive');
+    p.append(`${b}[tax_code]`, 'txcd_92010001');
     if (r.min_days && r.max_days) {
       p.append(`${b}[delivery_estimate][minimum][unit]`, 'business_day');
       p.append(`${b}[delivery_estimate][minimum][value]`, String(r.min_days));
@@ -74,12 +83,20 @@ module.exports = async (req, res) => {
   if (process.env.STRIPE_TERMS === '1') p.append('consent_collection[terms_of_service]', 'required');
 
   try {
-    const r = await fetch('https://api.stripe.com/v1/checkout/sessions', {
+    const send = (params) => fetch('https://api.stripe.com/v1/checkout/sessions', {
       method: 'POST',
       headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: p.toString(),
+      body: params.toString(),
     });
-    const j = await r.json();
+    let r = await send(p);
+    let j = await r.json();
+    // Si Stripe Tax no está activado en la cuenta, se reintenta sin cálculo automático para no bloquear la venta.
+    if (!r.ok && /tax/i.test(String(j && j.error && j.error.message))) {
+      console.error('Stripe Tax:', j.error.message);
+      p.delete('automatic_tax[enabled]');
+      r = await send(p);
+      j = await r.json();
+    }
     if (!r.ok || !j.url) { console.error('Stripe:', j && j.error && j.error.message); return res.status(502).json({ error: 'stripe' }); }
     return res.status(200).json({ url: j.url });
   } catch (e) {
